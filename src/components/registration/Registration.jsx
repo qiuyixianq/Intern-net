@@ -1,11 +1,16 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+const registered = false;
+//<Redirect to='/home'/>
 export const Registration = () => {
-    return (
+    return(
         <div>
-            <h3>This is registration page</h3>
-            <Redirect to='/home'/>
+            <h3>Registration Page</h3>
+
+            <h6>
+                <Link to="/login" >Go to login</Link>
+            </h6>
         </div>
     )
 }
