@@ -1,16 +1,28 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
-const logined = true;
+const logined = false;
 export const Login = () => {
-    if(!logined){
+    if (!logined) {
         return (
             <div>
-                <h3>This is login page</h3>
-                <h6>Some login form</h6>
+                <div>
+                    <center>
+                        <h3>Login</h3>
+                        <label htmlFor="username">Username: </label>
+                        <input type="text" id="username" />
+
+                        <br />
+                        <label htmlFor="pass">Password: </label>
+                        <input type="password" id="pass" />
+
+                        <br />
+                        <Link to='/registration' >Back to Registration</Link>
+                    </center>
+                </div>
             </div>
         )
-    }else{
+    } else {
         return (
             <Redirect to='/home' />
         )
