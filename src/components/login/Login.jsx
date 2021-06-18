@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-const logined = false;
+const logined = true;
 export const Login = () => {
     if (!logined) {
         return (
