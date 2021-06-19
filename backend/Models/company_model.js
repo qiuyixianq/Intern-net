@@ -18,6 +18,11 @@ const companySchema = mongoose.Schema({
         required:true
     },
 
+    companyWebsite:{
+        type:String,
+        required:true 
+    },
+
     companySize: {
         type:String,
         required:true 
@@ -38,9 +43,12 @@ const companySchema = mongoose.Schema({
         required:true
     },
 
-    companyJob: [jobSchema]
-    
+    companyJob: [jobSchema],
 
+    logo: {
+        type:String,
+        required:true 
+    }
 });
 
 module.exports = mongoose.model('companies',companySchema);
