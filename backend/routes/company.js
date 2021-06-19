@@ -5,9 +5,14 @@ const router = express.Router();
 const Company = require('../Models/company_model');
 
 router.post('/', (req,res) => {
-    const { name, type } = req.body;
+    const { name, size, type, industry, location, job } = req.body;
     const newCompany = new Company({
-        companyName: name, companyType: type
+        companyName: name,
+        companySize: size,
+        companyType: type,
+        companyIndustry: industry,
+        companyLocation: location,
+        companyJob: job
     });
 
     newCompany.save(err => err ? res.send(err) : res.send('company saved'));
