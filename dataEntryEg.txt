@@ -1,0 +1,14 @@
+{
+    "name": "Agoda",
+    "website": "www.agoda.com",
+    "size": "1001 to 5000 Employees",
+    "type": "Company - Public",
+    "industry": "Internet",
+    "location": "Kuala Lumpur",
+    "job": [
+        {"title": "Business Intern" , "description": "As a Business Development Specialist your key objective is growing the coverage and quality of Agoda's supply network. You take care of a large portfolio of emerging high growth supply partners and assist in partnership related functions at scale"},
+        {"title": "Customer Experience Analyst Intern" , "description": "Deliver excellent customer service and manage the needs of our customers (guests and partners) through our communication channels (phone, email, and live chat"},
+        {"title": "Backend Software Engineer Intern", "description": "Write maintainable, testable and readable code Improve existing processes & contribute new ideas through honest and respectful discussions"}
+    ],
+    "imgsrc": "https://media.glassdoor.com/sql/1710328/pop-meals-squareLogo-1619462933030.png"
+}
