@@ -14,7 +14,7 @@ router.get('/', (req,res) => {
         const { searchString } = req.query;
         if(searchString){
             //with filter
-            Company.find({companyName: {"$regex": searchString, "$options": "i"}}, (err,docs) => {
+            Company.find({"companyName": {"$regex": searchString, "$options": "i"}}, (err,docs) => {
                 err? res.json(err) : res.json(docs);
             });
         }else{
@@ -26,16 +26,15 @@ router.get('/', (req,res) => {
     else{
         const obj = JSON.parse(req.query.advanceSearchObject);
         let { companyName, companyIndustry, companyLocation, companyJobTitle } = obj;
-        
 
         Company.find({ 
-            companyName: { "$regex": companyName? companyName+'' : '', "$options": "i"},
-            companyIndustry: { "$regex": companyIndustry? companyIndustry+'' : '', "$options": "i"},
-            companyLocation: { "$regex": companyLocation? companyLocation+'' : '', "$options": "i"},
-            //companyJob: { "$regex": companyJobTitle + '', "$options": "i"}
+            "companyName": { "$regex": companyName? companyName+'' : '', "$options": "i"},
+            "companyIndustry": { "$regex": companyIndustry? companyIndustry+'' : '', "$options": "i"},
+            "companyLocation": { "$regex": companyLocation? companyLocation+'' : '', "$options": "i"},
+            "companyJob.title": { "$regex": companyJobTitle? companyJobTitle+'' : '', "$options": "i"}
         }, 
         (err,docs) => {
-            err? console.log(err) : console.log(docs);
+            err? res.json(err) : res.json(docs);
         })
     }
 })
@@ -57,3 +56,6 @@ router.post('/', (req,res) => {
 });
 
 module.exports = router;
+
+//array search
+//https://stackoverflow.com/a/45566069/11362540
