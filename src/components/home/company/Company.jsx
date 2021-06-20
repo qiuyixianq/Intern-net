@@ -5,14 +5,12 @@ const axios = require('axios').default;
 
 
 export const Company = () => {
-    const { searchString, isAdvanceSearch } = useSelector(state => state.searchQuery);
+    const { searchString, isAdvanceSearch, advanceSearchObject } = useSelector(state => state.searchQuery);
     const companyList = useSelector(state => state.companies);
     const dispatch = useDispatch();
 
-    //fetch data by normal search
     useEffect(() => {
-        console.log('fetching data');
-
+        //normal search
         if(!isAdvanceSearch){
             async function normalFetch() {
                 //note: params in axios config is actually 'query' in request header
@@ -22,7 +20,16 @@ export const Company = () => {
             }
             normalFetch();
         }
-    }, [searchString, dispatch, isAdvanceSearch]);
+        //advance search
+        else{
+            async function advanceFetch() {
+                const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, advanceSearchObject }});
+                const companies = res.data;
+                dispatch(loadCompany({ companies }));
+            }
+            advanceFetch();
+        }
+    }, [searchString, dispatch, isAdvanceSearch, advanceSearchObject]);
 
     const renderCompany = () => {
         if (companyList.length !== 0) {

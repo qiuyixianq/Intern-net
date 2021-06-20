@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     searchString: "",
     isAdvanceSearch: false,
-    advanceSearch: {
+    advanceSearchObject: {
         companyName: '',
         companyIndustry: '',
         companyLocation: '',
@@ -22,12 +22,12 @@ const searchBarSlice = createSlice({
         },
 
         toggleIsAdvanceSearch: (state,action) => {
-            state.isAdvanceSearch = !state.isAdvanceSearch;
+            state.isAdvanceSearch = action.payload.isAdvance;
             console.log('current searchType:', state.isAdvanceSearch);
         },
 
         updateAdvanceSearch: (state,action) => {
-            state.advanceSearch = action.payload;
+            state.advanceSearchObject = action.payload;
         },
     }
 });
