@@ -1,22 +1,35 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { updateSearch } from './searchBarSlice';
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleIsAdvanceSearch, updateSearch } from './searchBarSlice';
 
 export const SearchBar = () => {
     const dispatch = useDispatch();
-
-    const handleSearchUpdate = (event) => {
-        //dispatch the search string here
-        dispatch(updateSearch({query: event.target.value}));
+    const { isAdvanceSearch } = useSelector(state => state.searchQuery);
+    const handleSearchUpdate = event => dispatch(updateSearch({ query: event.target.value }));
+    const handleToggleAdvSearch = () => {
+        dispatch(updateSearch({ query: '' }));
+        dispatch(toggleIsAdvanceSearch());
+    }
+    
+    const renderSearchBar = () => {
+        if (!isAdvanceSearch) {
+            return (<input type="text" placeholder="Search Company" onChange={(e) => handleSearchUpdate(e)} />)
+        }
+        else {
+            return (
+                <div>
+                    input for advance search input
+                </div>
+            )
+        }
     }
 
     return (
         <div>
-            <input type="text" placeholder="Search" onChange={(e) => handleSearchUpdate(e)} />
+            {renderSearchBar()}
+            <button onClick={() => handleToggleAdvSearch()}>{isAdvanceSearch ? 'Normal Search' : 'Advance Search'}</button>
         </div>
     );
 
-    
+
 }
