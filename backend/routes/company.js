@@ -12,7 +12,7 @@ router.get('/', (req,res) => {
     const { searchString } = req.query;
     if(searchString){
         //with filter
-        Company.find({companyName: searchString}, (err,docs) => {
+        Company.find({companyName: {"$regex": searchString, "$options": "i"}}, (err,docs) => {
             err? res.json(err) : res.json(docs);
         });
     }else{

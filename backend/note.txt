@@ -1,0 +1,5 @@
+//regex
+e.g. mongoose find
+Company.find({companyName: {"$regex": searchString, "$options": "i"}},callback );
+options = i // insensitive casing
+//load all data CONTAIN searchString
