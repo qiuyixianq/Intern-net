@@ -7,7 +7,18 @@ const Company = require('../Models/company_model');
 
 //API
 router.get('/', (req,res) => {
-    Company.find((err,docs) => err? res.send(err) : res.send(docs));
+    //Company.find((err,docs) => err? res.send(err) : res.send(docs));
+
+    const { searchString } = req.query;
+    if(searchString){
+        //with filter
+        Company.find({companyName: searchString}, (err,docs) => {
+            err? res.json(err) : res.json(docs);
+        });
+    }else{
+        //no filter
+        Company.find((err,docs) => err? res.json(err) : res.json(docs));
+    }
 })
 
 router.post('/', (req,res) => {

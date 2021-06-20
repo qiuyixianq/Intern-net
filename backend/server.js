@@ -2,17 +2,18 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 
 
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(cors());
 //Route
 app.use('/company', require('./routes/company'));
 
 //Port
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Backend is listening on ${PORT}`));
 
 //MongoDB
