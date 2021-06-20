@@ -7,10 +7,11 @@ const Company = require('../Models/company_model');
 
 //API
 router.get('/', (req,res) => {
-    const { searchString, isAdvanceSearch } = req.query;
+    const { isAdvanceSearch } = req.query;
     
     //normal search
     if(isAdvanceSearch === 'false'){
+        const { searchString } = req.query;
         if(searchString){
             //with filter
             Company.find({companyName: {"$regex": searchString, "$options": "i"}}, (err,docs) => {
@@ -23,7 +24,19 @@ router.get('/', (req,res) => {
     }
     //advance search
     else{
-        //do advance searching
+        const obj = JSON.parse(req.query.advanceSearchObject);
+        let { companyName, companyIndustry, companyLocation, companyJobTitle } = obj;
+        
+
+        Company.find({ 
+            companyName: { "$regex": companyName? companyName+'' : '', "$options": "i"},
+            companyIndustry: { "$regex": companyIndustry? companyIndustry+'' : '', "$options": "i"},
+            companyLocation: { "$regex": companyLocation? companyLocation+'' : '', "$options": "i"},
+            //companyJob: { "$regex": companyJobTitle + '', "$options": "i"}
+        }, 
+        (err,docs) => {
+            err? console.log(err) : console.log(docs);
+        })
     }
 })
 
