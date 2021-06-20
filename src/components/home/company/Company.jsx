@@ -1,13 +1,23 @@
 import React from 'react';
-
-const company = ['a','b','c','d'];
+import { useSelector } from 'react-redux';
+const axios = require('axios').default;
 
 export const Company = () => {
+    const queryString = useSelector(state => state.searchQuery.searchString);
+
+    const getCompanies = () => {
+        return queryString === '' ? (
+            <p>all companies</p>
+        ) : (
+            <p>{`Companies with ${queryString}`}</p>
+        )
+    }
+
     return (
         <div>
             <h5>Company</h5>
             <div>
-                {company.map(x => <h6>{`Company ${x}`}</h6>)}
+                {getCompanies()}
             </div>
         </div>
     )
