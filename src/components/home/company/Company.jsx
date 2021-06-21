@@ -11,7 +11,7 @@ export const Company = () => {
 
     useEffect(() => {
         //normal search
-        if(!isAdvanceSearch){
+        if (!isAdvanceSearch) {
             async function normalFetch() {
                 //note: params in axios config is actually 'query' in request header
                 const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, searchString } });
@@ -21,9 +21,9 @@ export const Company = () => {
             normalFetch();
         }
         //advance search
-        else{
+        else {
             async function advanceFetch() {
-                const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, advanceSearchObject }});
+                const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, advanceSearchObject } });
                 const companies = res.data;
                 dispatch(loadCompany({ companies }));
             }
@@ -35,12 +35,18 @@ export const Company = () => {
         if (companyList.length !== 0) {
             return (
                 <div>
-                    {companyList.map((company, index) => <p key={index}>{company.companyName}</p>)}
+                    {companyList.map((company, index) => (
+                        <div key={index}>
+                            <p>{company.companyName}</p>
+                        </div>
+                    ))}
                 </div>
             )
         }
         else {
-            if (searchString !== '') return <div>Company Not Found 😐</div>
+            console.log(advanceSearchObject);
+            if ((searchString !== '' && !isAdvanceSearch) || ( advanceSearchObject !== null && isAdvanceSearch) ) 
+            return <div>No Company Found 😐 </div>
             else return <div>Loading ...</div>
         }
     }
@@ -48,7 +54,9 @@ export const Company = () => {
     return (
         <div>
             <h5>Company:</h5>
-            {renderCompany()}
+            <div>
+                {renderCompany()}
+            </div>
         </div>
     )
 }
