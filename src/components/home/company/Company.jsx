@@ -36,17 +36,24 @@ export const Company = () => {
             return (
                 <div>
                     {companyList.map((company, index) => (
-                        <div key={index}>
-                            <p>{company.companyName}</p>
+                        <div className="card mb-3" >
+                            <div key={index} className="card-header">
+                                {company.companyName}
+                            </div>
+
+                            <div className="card-body">
+                                <h6 className="card-title">Henlo</h6>
+                            </div>
                         </div>
                     ))}
+
                 </div>
             )
         }
         else {
             console.log(advanceSearchObject);
-            if ((searchString !== '' && !isAdvanceSearch) || ( advanceSearchObject !== null && isAdvanceSearch) ) 
-            return <div>No Company Found 😐 </div>
+            if ((searchString !== '' && !isAdvanceSearch) || (advanceSearchObject !== null && isAdvanceSearch))
+                return <div>No Company Found 😐 </div>
             else return <div>Loading ...</div>
         }
     }
