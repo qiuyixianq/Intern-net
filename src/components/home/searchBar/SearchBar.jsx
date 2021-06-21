@@ -17,12 +17,12 @@ export const SearchBar = () => {
 
     const setAdvanceSearch = (type) => {
         dispatch(updateSearch({ query: '' }));
-        dispatch(toggleIsAdvanceSearch({isAdvance: type}));
+        dispatch(toggleIsAdvanceSearch({ isAdvance: type }));
     }
 
     const advanceSearch = () => {
-        const searchObject = { 
-            companyName: nameRef.current.value, 
+        const searchObject = {
+            companyName: nameRef.current.value,
             companyIndustry: industryRef.current.value,
             companyLocation: locationRef.current.value,
             companyJobTitle: jobTitleRef.current.value
@@ -30,26 +30,48 @@ export const SearchBar = () => {
         dispatch(updateAdvanceSearch(searchObject));
     }
 
+    const clearBoxes = () => {
+        nameRef.current.value = '';
+        industryRef.current.value = '';
+        locationRef.current.value = '';
+        jobTitleRef.current.value = '';
+        dispatch(updateAdvanceSearch({}));
+    }
+
     const renderSearchBar = () => {
         if (!isAdvanceSearch) {
-            return (<input type="text" placeholder="Search Company" onChange={(e) => handleSearchUpdate(e)} />)
+            return (
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="Search Company" id="floatingInput" class="form-control" onChange={(e) => handleSearchUpdate(e)} />
+                    <label htmlFor="floatingInput">Search Company</label>
+                </div>
+            )
         }
         else {
             return (
-                <div>
-                    <label htmlFor="companyName">Company Name: </label>
-                    <input type="text" id="companyName" ref={nameRef} /><br />
+                <div >
+                    <div class="form-floating mb-2">
+                        <input type="text" id="companyName" placeholder="Company Name" class="form-control" ref={nameRef} />
+                        <label htmlFor="companyName">Company Name</label>
+                    </div>
 
-                    <label htmlFor="companyIndustry">Industry: </label>
-                    <input type="text" id="companyIndustry" ref={industryRef} /><br />
+                    <div class="form-floating mb-2">
+                        <input type="text" id="companyIndustry" placeholder="Industry" class="form-control" ref={industryRef} />
+                        <label htmlFor="companyIndustry">Industry</label>
+                    </div>
 
-                    <label htmlFor="companyLocation">Location: </label>
-                    <input type="text" id="companyLocation" ref={locationRef} /><br />
+                    <div class="form-floating mb-2">
+                        <input type="text" id="companyLocation" placeholder="Location" class="form-control" ref={locationRef} />
+                        <label htmlFor="companyLocation">Location</label>
+                    </div>
 
-                    <label htmlFor="companyJobTitle">Job Title: </label>
-                    <input type="text" id="companyJobTitle" ref={jobTitleRef} /><br />
+                    <div class="form-floating mb-2">
+                        <input type="text" id="companyJobTitle" placeholder="Job Title" class="form-control" ref={jobTitleRef} />
+                        <label htmlFor="companyJobTitle">Job Title</label>
+                    </div>
 
-                    <button onClick={() => advanceSearch()}>Search</button>
+                    <button className="btn btn-info " onClick={() => advanceSearch()}>Filter</button>
+                    <button className="btn btn-outline-warning ms-3 text-dark" onClick={() => clearBoxes()}>Reset</button>
                 </div>
             )
         }
@@ -57,8 +79,10 @@ export const SearchBar = () => {
 
     return (
         <div>
-            <button onClick={() => setAdvanceSearch(false)}>Normal</button>
-            <button onClick={() => setAdvanceSearch(true)}>Advance</button>
+            <div className="searchTypeGroup btn-group ">
+                <button onClick={() => setAdvanceSearch(false)} className={` btn btn-primary ${isAdvanceSearch ? '' : 'active'}`}>Normal</button>
+                <button onClick={() => setAdvanceSearch(true)} className={` btn btn-primary ${isAdvanceSearch ? 'active' : ''}`}>Advance</button>
+            </div>
             <br />
             {renderSearchBar()}
         </div>
