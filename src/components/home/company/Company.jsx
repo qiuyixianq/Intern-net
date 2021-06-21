@@ -36,13 +36,13 @@ export const Company = () => {
             return (
                 <div>
                     {companyList.map((company, index) => (
-                        <div className="card mb-3" >
-                            <div key={index} className="card-header">
+                        <div className="card mb-4" >
+                            <div key={index} className="card-header fw-bold">
                                 {company.companyName}
                             </div>
 
                             <div className="card-body">
-                                <h6 className="card-title">Henlo</h6>
+                                <h6 className="card-text fw-normal">{company.companyIndustry}</h6>
                             </div>
                         </div>
                     ))}
@@ -60,7 +60,7 @@ export const Company = () => {
 
     return (
         <div>
-            <h5>Company:</h5>
+            <h5 className="mt-5 mb-3">Company</h5>
             <div>
                 {renderCompany()}
             </div>
