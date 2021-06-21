@@ -12,7 +12,10 @@ export const Home = () => {
                     </span>
 
                     <ul className="nav nav-pills">
-                        <li className="nav-item"><a href="/" className="nav-link">Log Out</a></li>
+                        <li className="nav-item">
+                            <span className="nav-link">Profile</span>
+                        </li>
+                        <li className="nav-item"><span className="nav-link">Log Out</span></li>
                     </ul>
                 </header>
             </div>

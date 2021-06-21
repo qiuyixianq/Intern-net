@@ -8,7 +8,8 @@ import { LandingPage } from './components/landingPage/LandingPage';
 
 function App() {
   return (
-    <Router>
+    <div className="main">
+      <Router>
       <Switch>
         <Route path='/' exact>
           <LandingPage/>
@@ -30,6 +31,7 @@ function App() {
 
       </Switch>
     </Router>
+    </div>
   );
 }
 
