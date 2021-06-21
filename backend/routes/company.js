@@ -26,7 +26,7 @@ router.get('/', (req,res) => {
     else{
         const obj = JSON.parse(req.query.advanceSearchObject);
         let { companyName, companyIndustry, companyLocation, companyJobTitle } = obj;
-
+        
         Company.find({ 
             "companyName": { "$regex": companyName? companyName+'' : '', "$options": "i"},
             "companyIndustry": { "$regex": companyIndustry? companyIndustry+'' : '', "$options": "i"},
@@ -35,7 +35,7 @@ router.get('/', (req,res) => {
         }, 
         (err,docs) => {
             err? res.json(err) : res.json(docs);
-        })
+        });
     }
 })
 

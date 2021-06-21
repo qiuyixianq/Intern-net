@@ -23,7 +23,7 @@ export const SearchBar = () => {
     const advanceSearch = () => {
         const searchObject = { 
             companyName: nameRef.current.value, 
-            companyIndusty: industryRef.current.value,
+            companyIndustry: industryRef.current.value,
             companyLocation: locationRef.current.value,
             companyJobTitle: jobTitleRef.current.value
         };
