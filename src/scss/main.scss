@@ -1,13 +1,35 @@
 $body-bg: #ffffff;
 
 
+$btn-focus-box-shadow: none;
+$btn-focus-width: none;
+
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 body {
-    padding: 0px 10px;
+    padding: 0px 20px;
+    margin: 0;
+    width: 100vw;
 }
 
 .searchTypeGroup {
     margin-bottom: 10px;
 }
+
+.toggleAdvance {
+    display: inline;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background:grey;
+    border-radius: 2px;
+  }
