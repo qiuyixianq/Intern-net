@@ -11511,6 +11511,11 @@ body {
   opacity: 1;
 }
 
+.card:hover {
+  -webkit-transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
+}
+
 .companyLogo {
   border-radius: 10px;
 }

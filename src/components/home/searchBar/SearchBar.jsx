@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleIsAdvanceSearch, updateSearch, updateAdvanceSearch } from './searchBarSlice';
+import { gsap } from 'gsap';
 
 export const SearchBar = () => {
     //for slices
@@ -13,6 +14,15 @@ export const SearchBar = () => {
     const jobTitleRef = useRef(null);
     //for open close advance search input
     const [openAdvanceInput, setOpenAdvanceInput] = useState(true);
+
+    //search form anim
+    useEffect(() => {
+        const t = gsap.timeline({defaults: {ease: 'power1.out'}});
+        t.fromTo('.form-floating', { opacity: 0, y: "30%"}, { opacity: 1, y: "0%", duration: 0.5, stagger: 0.15});
+
+        //cleanup func
+        return () => t.kill();
+    },[isAdvanceSearch, openAdvanceInput]);
 
     //functions
     //onclick =>
@@ -60,22 +70,22 @@ export const SearchBar = () => {
                 <div>
                     {openAdvanceInput ? (
                         <div>
-                            <div className="form-floating mb-2">
+                            <div className="form-floating mb-2 ">
                                 <input type="text" id="companyName" placeholder="Company Name" className="form-control" ref={nameRef} />
                                 <label htmlFor="companyName">Company Name</label>
                             </div>
 
-                            <div className="form-floating mb-2">
+                            <div className="form-floating mb-2 ">
                                 <input type="text" id="companyIndustry" placeholder="Industry" className="form-control" ref={industryRef} />
                                 <label htmlFor="companyIndustry">Industry</label>
                             </div>
 
-                            <div className="form-floating mb-2">
+                            <div className="form-floating mb-2 ">
                                 <input type="text" id="companyLocation" placeholder="Location" className="form-control" ref={locationRef} />
                                 <label htmlFor="companyLocation">Location</label>
                             </div>
 
-                            <div className="form-floating mb-2">
+                            <div className="form-floating mb-2 ">
                                 <input type="text" id="companyJobTitle" placeholder="Job Title" className="form-control" ref={jobTitleRef} />
                                 <label htmlFor="companyJobTitle">Job Title</label>
                             </div>

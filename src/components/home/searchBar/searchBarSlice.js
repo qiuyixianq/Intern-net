@@ -18,12 +18,10 @@ const searchBarSlice = createSlice({
     reducers: {
         updateSearch: (state,action) => {
             state.searchString = action.payload.query;
-            console.log('current searchString:',state.searchString);
         },
 
         toggleIsAdvanceSearch: (state,action) => {
             state.isAdvanceSearch = action.payload.isAdvance;
-            console.log('current searchType:', state.isAdvanceSearch);
         },
 
         updateAdvanceSearch: (state,action) => {
