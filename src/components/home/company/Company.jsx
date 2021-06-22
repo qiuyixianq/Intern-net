@@ -12,38 +12,37 @@ export const Company = () => {
     const companyRef = useRef(null);
     //Company & pagination variable
     const companyList = useSelector(state => state.companies);
-    const [ pageNumber, setPageNumber ] = useState(0);
+    const [pageNumber, setPageNumber] = useState(0);
     const usersPerPage = 10;
     const currentPageUsers = pageNumber * usersPerPage;
     let pageCount = 1;
 
     //event func
-    const onPageChange = ({selected}) => {
+    const onPageChange = ({ selected }) => {
         setPageNumber(selected);
-        companyRef.current.scrollIntoView({behavior: 'smooth'});
+        companyRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     //API call
     useEffect(() => {
-        //normal search
-        if (!isAdvanceSearch) {
-            async function normalFetch() {
-                //note: params in axios config is actually 'query' in request header
-                const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, searchString } });
-                const companies = res.data; //array of companies
-                dispatch(loadCompany({ companies }));
-            }
-            normalFetch();
+        //normal search func
+        async function normalFetch() {
+            //note: params in axios config is actually 'query' in request header
+            const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, searchString } });
+            const companies = res.data; //array of companies
+            dispatch(loadCompany({ companies }));
         }
-        //advance search
-        else {
-            async function advanceFetch() {
-                const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, advanceSearchObject } });
-                const companies = res.data;
-                dispatch(loadCompany({ companies }));
-            }
-            advanceFetch();
+
+        //advance search func
+        async function advanceFetch() {
+            const res = await axios.get('http://localhost:4000/company', { params: { isAdvanceSearch, advanceSearchObject } });
+            const companies = res.data;
+            dispatch(loadCompany({ companies }));
         }
+
+        isAdvanceSearch? advanceFetch() : normalFetch();
+        setPageNumber(0);
+
     }, [searchString, dispatch, isAdvanceSearch, advanceSearchObject]);
 
     //Render Comapnies into Cards
@@ -60,11 +59,23 @@ export const Company = () => {
                             </div>
 
                             <div className="card-body">
-                                <h6>Industry: <span className="fw-light">{company.companyIndustry}</span></h6>
-                                <h6>Jobs <span className="badge bg-success">{company.companyJob.length}</span></h6>
+                                <h6>Industry: <span className="fw-normal">{company.companyIndustry}</span></h6>
+                                <h6>Jobs <span className="badge bg-success" >{company.companyJob.length}</span></h6>
                             </div>
                         </div>
                     ))}
+
+                    <ReactPaginate
+                        previousLabel={'<'}
+                        nextLabel={'>'}
+                        pageCount={pageCount}
+                        onPageChange={onPageChange}
+                        containerClassName={'companyPageBox'}
+                        previousLinkClassName={'previousPageBtn'}
+                        nextLinkClassName={'nextPageBtn'}
+                        disabledClassName={'disablePageBtn'}
+                        activeClassName={'activePageBtn'}
+                    />
 
                 </div>
             )
@@ -82,19 +93,9 @@ export const Company = () => {
         <div>
             <hr></hr>
             <h5 className="mt-5 mb-3" ref={companyRef}>Company</h5>
-            <div>
+            <div className="mb-5">
                 {renderCompany()}
-                <ReactPaginate
-                    previousLabel={'<'}
-                    nextLabel={'>'}
-                    pageCount={pageCount}
-                    onPageChange={onPageChange}
-                    containerClassName={'companyPageBox'}
-                    previousLinkClassName={'previousPageBtn'}
-                    nextLinkClassName={'nextPageBtn'}
-                    disabledClassName={'disablePageBtn'}
-                    activeClassName={'activePageBtn'}
-                />
+
             </div>
         </div>
     )
