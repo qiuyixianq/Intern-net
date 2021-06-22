@@ -11,10 +11,7 @@ body {
     padding: 0px 20px;
     margin: 0;
     width: 100vw;
-}
-
-.searchTypeGroup {
-    margin-bottom: 10px;
+    overflow-x: hidden;
 }
 
 .card:hover {
@@ -23,7 +20,8 @@ body {
 }
 
 .card-header {
-    background-color: $teal-300;
+    color: white;
+    background-color: $cyan-600;
 }
 
 .card {
@@ -53,11 +51,38 @@ body {
   }
 
 
+  .companyLogo {
+    border-radius: 10px;
+  }
+
+  .companyPageBox {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+
+    a {
+      color: black;
+      text-decoration: none;
+      border: 1px solid black;
+      margin: 0px 5px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    a:hover {
+      background-color: $yellow-400;
+    }
+
+    .activePageBtn a {
+      background-color: $yellow-400;
+    }
+  }
 
 
 
-
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
   }
   

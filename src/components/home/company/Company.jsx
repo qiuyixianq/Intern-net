@@ -1,14 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadCompany } from './companySlice';
+import ReactPaginate from 'react-paginate';
 const axios = require('axios').default;
 
 
 export const Company = () => {
     const { searchString, isAdvanceSearch, advanceSearchObject } = useSelector(state => state.searchQuery);
-    const companyList = useSelector(state => state.companies);
     const dispatch = useDispatch();
+    //useRef
+    const companyRef = useRef(null);
+    //Company & pagination variable
+    const companyList = useSelector(state => state.companies);
+    const [ pageNumber, setPageNumber ] = useState(0);
+    const usersPerPage = 10;
+    const currentPageUsers = pageNumber * usersPerPage;
+    let pageCount = 1;
 
+    //event func
+    const onPageChange = ({selected}) => {
+        setPageNumber(selected);
+        companyRef.current.scrollIntoView({behavior: 'smooth'});
+    }
+
+    //API call
     useEffect(() => {
         //normal search
         if (!isAdvanceSearch) {
@@ -31,18 +46,22 @@ export const Company = () => {
         }
     }, [searchString, dispatch, isAdvanceSearch, advanceSearchObject]);
 
+    //Render Comapnies into Cards
     const renderCompany = () => {
         if (companyList.length !== 0) {
+            pageCount = Math.ceil(companyList.length / usersPerPage);
             return (
                 <div>
-                    {companyList.map((company, index) => (
-                        <div className="card mb-4" >
-                            <div key={index} className="card-header fw-bold">
+                    {companyList.slice(currentPageUsers, currentPageUsers + usersPerPage).map((company, index) => (
+                        <div key={index} className="card mb-4" >
+                            <div className="card-header fw-bold">
+                                <img className="me-3 companyLogo" src={company.logo} alt="company logo" height="55" />
                                 {company.companyName}
                             </div>
 
                             <div className="card-body">
-                                <h6 className="card-text fw-normal">{company.companyIndustry}</h6>
+                                <h6>Industry: <span className="fw-light">{company.companyIndustry}</span></h6>
+                                <h6>Jobs <span className="badge bg-success">{company.companyJob.length}</span></h6>
                             </div>
                         </div>
                     ))}
@@ -51,18 +70,31 @@ export const Company = () => {
             )
         }
         else {
-            console.log(advanceSearchObject);
             if ((searchString !== '' && !isAdvanceSearch) || (advanceSearchObject !== null && isAdvanceSearch))
                 return <div>No Company Found 😐 </div>
             else return <div>Loading ...</div>
         }
     }
 
+
+    //main render
     return (
         <div>
-            <h5 className="mt-5 mb-3">Company</h5>
+            <hr></hr>
+            <h5 className="mt-5 mb-3" ref={companyRef}>Company</h5>
             <div>
                 {renderCompany()}
+                <ReactPaginate
+                    previousLabel={'<'}
+                    nextLabel={'>'}
+                    pageCount={pageCount}
+                    onPageChange={onPageChange}
+                    containerClassName={'companyPageBox'}
+                    previousLinkClassName={'previousPageBtn'}
+                    nextLinkClassName={'nextPageBtn'}
+                    disabledClassName={'disablePageBtn'}
+                    activeClassName={'activePageBtn'}
+                />
             </div>
         </div>
     )
