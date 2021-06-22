@@ -10,27 +10,27 @@ function App() {
   return (
     <div className="main">
       <Router>
-      <Switch>
-        <Route path='/' exact>
-          <LandingPage/>
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path='/' exact>
+            <LandingPage />
+          </Route>
+        </Switch>
 
-      <Switch>
-        <Route path='/registration' exact>
-          <Registration />
-        </Route>
+        <Switch>
+          <Route path='/registration' exact>
+            <Registration />
+          </Route>
 
-        <Route path='/home' exact>
-          <Home />
-        </Route>
+          <Route path='/home' exact>
+            <Home />
+          </Route>
 
-        <Route path='/login' exact>
-          <Login />
-        </Route>
+          <Route path='/login' exact>
+            <Login />
+          </Route>
 
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
     </div>
   );
 }

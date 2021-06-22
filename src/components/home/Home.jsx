@@ -13,9 +13,9 @@ export const Home = () => {
 
                     <ul className="nav nav-pills">
                         <li className="nav-item">
-                            <span className="nav-link">Profile</span>
+                            <button className="nav-link">Profile</button>
                         </li>
-                        <li className="nav-item"><span className="nav-link">Log Out</span></li>
+                        <li className="nav-item"><button className="nav-link">Log Out</button></li>
                     </ul>
                 </header>
             </div>

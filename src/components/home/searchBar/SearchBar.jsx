@@ -15,6 +15,7 @@ export const SearchBar = () => {
     const [openAdvanceInput, setOpenAdvanceInput] = useState(true);
 
     //functions
+    //onclick =>
     const toggleAdvanceInput = () => setOpenAdvanceInput(!openAdvanceInput);
     const handleSearchUpdate = event => dispatch(updateSearch({ query: event.target.value }));
 
@@ -41,45 +42,49 @@ export const SearchBar = () => {
         dispatch(updateAdvanceSearch({}));
     }
 
+    //render utility
     const renderSearchBar = () => {
+
+        //Normal Search
         if (!isAdvanceSearch) {
             return (
-                <div class="form-floating">
-                    <input type="text" placeholder="Search Company" id="floatingInput" class="form-control" onChange={(e) => handleSearchUpdate(e)} />
-                    <label htmlFor="floatingInput">Search Company</label>
+                <div className="form-floating">
+                    <input type="text" placeholder="Search Company" id="normalSearch" className="form-control" onChange={(e) => handleSearchUpdate(e)} />
+                    <label htmlFor="normalSearch">Search Company</label>
                 </div>
             )
         }
+        //Advance Search
         else {
             return (
                 <div>
-
                     {openAdvanceInput ? (
                         <div>
-                            <div class="form-floating mb-2">
-                                <input type="text" id="companyName" placeholder="Company Name" class="form-control" ref={nameRef} />
+                            <div className="form-floating mb-2">
+                                <input type="text" id="companyName" placeholder="Company Name" className="form-control" ref={nameRef} />
                                 <label htmlFor="companyName">Company Name</label>
                             </div>
 
-                            <div class="form-floating mb-2">
-                                <input type="text" id="companyIndustry" placeholder="Industry" class="form-control" ref={industryRef} />
+                            <div className="form-floating mb-2">
+                                <input type="text" id="companyIndustry" placeholder="Industry" className="form-control" ref={industryRef} />
                                 <label htmlFor="companyIndustry">Industry</label>
                             </div>
 
-                            <div class="form-floating mb-2">
-                                <input type="text" id="companyLocation" placeholder="Location" class="form-control" ref={locationRef} />
+                            <div className="form-floating mb-2">
+                                <input type="text" id="companyLocation" placeholder="Location" className="form-control" ref={locationRef} />
                                 <label htmlFor="companyLocation">Location</label>
                             </div>
 
-                            <div class="form-floating mb-2">
-                                <input type="text" id="companyJobTitle" placeholder="Job Title" class="form-control" ref={jobTitleRef} />
+                            <div className="form-floating mb-2">
+                                <input type="text" id="companyJobTitle" placeholder="Job Title" className="form-control" ref={jobTitleRef} />
                                 <label htmlFor="companyJobTitle">Job Title</label>
                             </div>
 
                             <button className="btn btn-info " onClick={() => advanceSearch()}>Filter</button>
                             <button className="btn btn-outline-warning ms-2 text-dark" onClick={() => clearBoxes()}>Reset</button>
                         </div>
-                    ) : <React.Fragment></React.Fragment>}
+                    ) : 
+                    <React.Fragment></React.Fragment>}
                 </div>
             )
         }
@@ -88,25 +93,32 @@ export const SearchBar = () => {
     //main render
     return (
         <div>
-            <div className="d-flex align-items-center">
-                <div className="searchTypeGroup btn-group ">
-                    <button onClick={() => setAdvanceSearch(false)} className={` btn btn-primary ${isAdvanceSearch ? '' : 'active'}`}>Normal</button>
-                    <button onClick={() => setAdvanceSearch(true)} className={` btn btn-primary ${isAdvanceSearch ? 'active' : ''}`}>Advance</button>
-                </div>
-                {isAdvanceSearch ? (
-                    <button className="mb-2 p-1 btn btn-light" onClick={() => toggleAdvanceInput()}>
-                        {openAdvanceInput ? (
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
-                            </svg>
+            <div className="d-flex align-items-center " >
+                <div className="btn-group " role="group">
+                    <input type="radio" className="btn-check" name='btnradio' id='normalSearch' autoComplete='off' checked={!isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(false)}  />
+                    <label className="btn btn-outline-primary" htmlFor="normalSearch">Normal</label>
 
-                        ) : (
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                            </svg>
-                        )}
-                    </button>
-                ) : <React.Fragment></React.Fragment>}
+                    <input type="radio" className="btn-check" name="btnradio" id='advanceSearch' autoComplete='off' checked={isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(true)} />
+                    <label className="btn btn-outline-primary" htmlFor="advanceSearch">Advance</label>
+                </div>
+
+                {isAdvanceSearch ?
+                    (
+                        <span className="mb-2 p-1" role='button' onClick={() => toggleAdvanceInput()}>
+                            {openAdvanceInput ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                                    <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                                </svg>
+
+                            ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                </svg>
+                            )}
+                        </span>
+                    ) :
+                    <React.Fragment></React.Fragment>
+                }
             </div>
             <br />
             {renderSearchBar()}
