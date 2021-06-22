@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadCompany } from './companySlice';
 import ReactPaginate from 'react-paginate';
+import { gsap } from 'gsap';
 const axios = require('axios').default;
 
 
@@ -22,6 +23,14 @@ export const Company = () => {
         setPageNumber(selected);
         companyRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+
+    //company card anim
+    useEffect(() => {
+        const t = gsap.timeline( {defaults: {ease: 'power1.out'}});
+        t.to('.card', {opacity: 1,  duration: 0.5, stagger: 0.15});
+
+        return () => t.kill();
+    },[companyList]);
 
     //API call
     useEffect(() => {
