@@ -4,7 +4,7 @@ import { SearchBar } from './searchBar/SearchBar';
 
 export const Home = () => {
     return (
-        <div>
+        <div className="mainContent">
             <div className="container-fluid">
                 <header className="d-flex flex-wrap justify-content-between py-2 mb-3 border-bottom">
                     <span className="d-flex align-items-center text-dark text-decoration-none">

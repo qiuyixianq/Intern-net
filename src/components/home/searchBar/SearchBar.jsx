@@ -102,7 +102,7 @@ export const SearchBar = () => {
 
     //main render
     return (
-        <div>
+        <div className='searchBarJSX'>
             <div className="d-flex align-items-center " >
                 <div className="btn-group " role="group">
                     <input type="radio" className="btn-check" name='btnradio' id='normalSearch' autoComplete='off' checked={!isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(false)}  />
