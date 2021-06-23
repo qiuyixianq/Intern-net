@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadCompany } from './companySlice';
 import ReactPaginate from 'react-paginate';
 import { gsap } from 'gsap';
+import { CompanyDetail } from './companyDetail/CompanyDetail';
 const axios = require('axios').default;
 
 
@@ -26,11 +27,11 @@ export const Company = () => {
 
     //company card anim
     useEffect(() => {
-        const t = gsap.timeline( {defaults: {ease: 'power1.out'}});
-        t.to('.card', {opacity: 1,  duration: 0.5, stagger: 0.15});
+        const t = gsap.timeline({ defaults: { ease: 'power1.out' } });
+        t.to('.card', { opacity: 1, duration: 0.5, stagger: 0.15 });
 
         return () => t.kill();
-    },[companyList]);
+    }, [companyList]);
 
     //API call
     useEffect(() => {
@@ -49,7 +50,7 @@ export const Company = () => {
             dispatch(loadCompany({ companies }));
         }
 
-        isAdvanceSearch? advanceFetch() : normalFetch();
+        isAdvanceSearch ? advanceFetch() : normalFetch();
         setPageNumber(0);
 
     }, [searchString, dispatch, isAdvanceSearch, advanceSearchObject]);
@@ -59,7 +60,7 @@ export const Company = () => {
         if (companyList.length !== 0) {
             pageCount = Math.ceil(companyList.length / usersPerPage);
             return (
-                <div>
+                <div className="cardInnerContainer">
                     {companyList.slice(currentPageUsers, currentPageUsers + usersPerPage).map((company, index) => (
                         <div key={index} className="card mb-4" >
                             <div className="card-header fw-bold">
@@ -102,9 +103,10 @@ export const Company = () => {
         <div>
             <hr></hr>
             <h5 className="mt-5 mb-3" ref={companyRef}>Company</h5>
-            <div className="mb-5">
+            <div className="cardOuterContainer mb-5">
                 {renderCompany()}
 
+                <CompanyDetail />
             </div>
         </div>
     )
