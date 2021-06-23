@@ -101,7 +101,6 @@ export const Company = () => {
     //main render
     return (
         <div>
-            <hr></hr>
             <h5 className="mt-5 mb-3" ref={companyRef}>Company</h5>
             <div className="cardOuterContainer mb-5">
                 {renderCompany()}

@@ -11473,6 +11473,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (min-width: 1700px) {
+  .mainContent .mainBar {
+    width: 75%;
+  }
+}
+
 .mainContent .appName {
   font-family: "Lobster Two", cursive;
 }
@@ -11490,6 +11496,10 @@ body {
   }
 }
 
+.searchBarJSX input {
+  border-radius: 20px;
+}
+
 @media (min-width: 992px) {
   .searchBarJSX {
     width: 75%;
@@ -11497,8 +11507,10 @@ body {
   }
 }
 
-.searchBarJSX input {
-  border-radius: 20px;
+@media (min-width: 1700px) {
+  .searchBarJSX {
+    width: 60%;
+  }
 }
 
 .cardOuterContainer .cardInnerContainer .card {

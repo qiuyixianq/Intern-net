@@ -132,6 +132,7 @@ export const SearchBar = () => {
             </div>
             <br />
             {renderSearchBar()}
+            <hr />
         </div>
     );
 
