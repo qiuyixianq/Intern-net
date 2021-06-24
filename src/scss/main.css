@@ -11557,6 +11557,7 @@ body {
   padding: 20px;
   left: 0%;
   top: -1%;
+  overflow-y: scroll;
 }
 
 .cardOuterContainer .companyDetail .btnCloseContainer {
@@ -11565,6 +11566,18 @@ body {
 
 .cardOuterContainer .companyDetail .companyLogo {
   border-radius: 15px;
+}
+
+.cardOuterContainer .companyDetail .jobCardContainer {
+  padding: 5px;
+}
+
+.cardOuterContainer .companyDetail .jobCardContainer .jobCard {
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  padding: 8px;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 992px) {
