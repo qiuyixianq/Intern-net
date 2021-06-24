@@ -11548,14 +11548,23 @@ body {
 .cardOuterContainer .companyDetail {
   position: absolute;
   z-index: 2;
-  background-color: black;
-  opacity: 0.3;
+  background-color: #222222;
+  color: white;
+  opacity: 0;
   width: 100%;
   height: 96vh;
   border-radius: 20px;
   padding: 20px;
   left: 0%;
   top: -1%;
+}
+
+.cardOuterContainer .companyDetail .btnCloseContainer {
+  text-align: right;
+}
+
+.cardOuterContainer .companyDetail .companyLogo {
+  border-radius: 15px;
 }
 
 @media (min-width: 992px) {
