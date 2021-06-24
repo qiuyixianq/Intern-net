@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Company } from './company/Company';
 import { SearchBar } from './searchBar/SearchBar';
+import { gsap } from 'gsap';
+
+
 
 export const Home = () => {
+
+    useEffect(() => {
+        const t = gsap.timeline({defaults: {ease: 'power1'}});
+    
+        t.fromTo('.mainBar', { opacity: 0 }, { opacity: 1, duration: 1});
+    
+        return () => t.kill();
+    },[]);
+
+    
     return (
         <div className="mainContent">
             <div className="mainBar container-fluid">
