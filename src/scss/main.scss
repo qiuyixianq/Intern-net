@@ -138,6 +138,7 @@ body {
     padding: 20px;
     left: 0%;
     top: -1%;
+    overflow-y: scroll;
 
     //mobile only
     .btnCloseContainer {
@@ -147,7 +148,19 @@ body {
     .companyLogo {
       border-radius: 15px;
     }
-    
+
+    .jobCardContainer {
+      padding: 5px;
+
+      .jobCard {
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        padding: 8px;
+        margin-bottom: 1em;
+      }
+    }
+
     @include large {
       position: relative;
       width: 65%;
@@ -161,6 +174,7 @@ body {
     position: relative;
   }
 }
+//cardOuterContainer END
 
 .test-container {
   text-align: center;

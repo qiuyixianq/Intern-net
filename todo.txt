@@ -1,0 +1,3 @@
+todo:
+dont scroll outer scrollbar
+fix company website link (start with https)
