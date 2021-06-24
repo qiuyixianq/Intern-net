@@ -11513,6 +11513,10 @@ body {
   }
 }
 
+.cardOuterContainer {
+  position: relative;
+}
+
 .cardOuterContainer .cardInnerContainer .card {
   position: relative;
   background-color: #fff5eb;
@@ -11546,11 +11550,12 @@ body {
   z-index: 2;
   background-color: black;
   opacity: 0.3;
-  width: 95%;
+  width: 100%;
   height: 96vh;
   border-radius: 20px;
-  left: 3%;
-  top: 0%;
+  padding: 20px;
+  left: 0%;
+  top: -1%;
 }
 
 @media (min-width: 992px) {

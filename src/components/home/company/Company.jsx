@@ -1,22 +1,28 @@
+//react
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+//slice
+import { setSelectedCompany, setShowDetail } from './companyDetail/companyDetailSlice';
 import { loadCompany } from './companySlice';
+//components
 import ReactPaginate from 'react-paginate';
-import { gsap } from 'gsap';
 import { CompanyDetail } from './companyDetail/CompanyDetail';
+//misc
+import { gsap } from 'gsap';
 const axios = require('axios').default;
 
 
 export const Company = () => {
-    const { searchString, isAdvanceSearch, advanceSearchObject } = useSelector(state => state.searchQuery);
     const dispatch = useDispatch();
+    //companySlice
+    const { searchString, isAdvanceSearch, advanceSearchObject } = useSelector(state => state.searchQuery);
     //useRef
     const companyRef = useRef(null);
     //Company & pagination variable
     const companyList = useSelector(state => state.companies);
     const [pageNumber, setPageNumber] = useState(0);
-    const usersPerPage = 10;
-    const currentPageUsers = pageNumber * usersPerPage;
+    const cardsPerPage = 5;
+    const currentPageUsers = pageNumber * cardsPerPage;
     let pageCount = 1;
 
     //event func
@@ -25,13 +31,20 @@ export const Company = () => {
         companyRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
+    const onSelectCompany = company => {
+        dispatch(setSelectedCompany(company));
+        dispatch(setShowDetail(true));
+    }
+
     //company card anim
     useEffect(() => {
         const t = gsap.timeline({ defaults: { ease: 'power1.out' } });
         t.to('.card', { opacity: 1, duration: 0.5, stagger: 0.15 });
-
+        
+        //cleanup
         return () => t.kill();
-    }, [companyList]);
+    }, [companyList, pageNumber]);
+
 
     //API call
     useEffect(() => {
@@ -55,14 +68,15 @@ export const Company = () => {
 
     }, [searchString, dispatch, isAdvanceSearch, advanceSearchObject]);
 
+
     //Render Comapnies into Cards
     const renderCompany = () => {
         if (companyList.length !== 0) {
-            pageCount = Math.ceil(companyList.length / usersPerPage);
+            pageCount = Math.ceil(companyList.length / cardsPerPage);
             return (
                 <div className="cardInnerContainer">
-                    {companyList.slice(currentPageUsers, currentPageUsers + usersPerPage).map((company, index) => (
-                        <div key={index} className="card mb-4" >
+                    {companyList.slice(currentPageUsers, currentPageUsers + cardsPerPage).map((company, index) => (
+                        <div key={index} className="card mb-4" onClick={() => onSelectCompany(company)}>
                             <div className="card-header fw-bold">
                                 <img className="me-3 companyLogo" src={company.logo} alt="company logo" height="55" />
                                 {company.companyName}
@@ -105,7 +119,7 @@ export const Company = () => {
             <div className="cardOuterContainer mb-5">
                 {renderCompany()}
 
-                <CompanyDetail />
+                <CompanyDetail companyHeaderRef={companyRef} />
             </div>
         </div>
     )
