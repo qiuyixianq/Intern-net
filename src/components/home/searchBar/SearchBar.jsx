@@ -90,8 +90,8 @@ export const SearchBar = () => {
                                 <label htmlFor="companyJobTitle">Job Title</label>
                             </div>
 
-                            <button className="btn btn-info " onClick={() => advanceSearch()}>Filter</button>
-                            <button className="btn btn-outline-warning ms-2 text-dark" onClick={() => clearBoxes()}>Reset</button>
+                            <a className="btn btn-info " role="button" href="#companyHeader" onClick={() => advanceSearch()}>Filter</a>
+                            <a className="btn btn-outline-warning ms-2 text-dark" role="button" href="#companyHeader" onClick={() => clearBoxes()}>Reset</a>
                         </div>
                     ) : 
                     <React.Fragment></React.Fragment>}

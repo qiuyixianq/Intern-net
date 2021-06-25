@@ -131,7 +131,6 @@ body {
     z-index: 2;
     background-color: rgb(34, 34, 34);
     color: white;
-    opacity: 0;
     width: 100%;
     height: 96vh;
     border-radius: 20px;
@@ -139,6 +138,7 @@ body {
     left: 0%;
     top: -1%;
     overflow-y: scroll;
+    overscroll-behavior-y: contain;
 
     //mobile only
     .btnCloseContainer {
@@ -151,6 +151,7 @@ body {
 
     .jobCardContainer {
       padding: 5px;
+      
 
       .jobCard {
         border-radius: 10px;
@@ -158,15 +159,28 @@ body {
         color: black;
         padding: 8px;
         margin-bottom: 1em;
+
+        @include large {
+          margin-bottom: 2em;
+        }
       }
     }
 
     @include large {
       position: relative;
       width: 65%;
+      min-height: 96vh;
+      height: max-content;
+      padding: 20px 50px;
       left: 1%;
+      opacity: 1;
+    }
+
+    @include superLarge {
+      padding: 20px 100px;
     }
   }
+  //CompanyDetail END
 
   @include large {
     display: flex;

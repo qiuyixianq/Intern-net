@@ -34,6 +34,9 @@ export const Company = () => {
     const onSelectCompany = company => {
         dispatch(setSelectedCompany(company));
         dispatch(setShowDetail(true));
+
+        //scroll into detail
+        companyRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     //company card anim
@@ -77,6 +80,7 @@ export const Company = () => {
                 <div className="cardInnerContainer">
                     {companyList.slice(currentPageUsers, currentPageUsers + cardsPerPage).map((company, index) => (
                         <div key={index} className="card mb-4" onClick={() => onSelectCompany(company)}>
+
                             <div className="card-header fw-bold">
                                 <img className="me-3 companyLogo" src={company.logo} alt="company logo" height="55" />
                                 {company.companyName}
@@ -115,11 +119,11 @@ export const Company = () => {
     //main render
     return (
         <div>
-            <h5 className="mt-5 mb-3" ref={companyRef}>Company</h5>
+            <h5 className="mt-5 mb-3" ref={companyRef} id="companyHeader">Company</h5>
             <div className="cardOuterContainer mb-5">
                 {renderCompany()}
 
-                <CompanyDetail companyHeaderRef={companyRef} />
+                <CompanyDetail />
             </div>
         </div>
     )
