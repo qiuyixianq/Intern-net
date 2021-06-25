@@ -88,6 +88,7 @@ export const Company = () => {
 
                             <div className="card-body">
                                 <h6>Industry: <span className="fw-normal">{company.companyIndustry}</span></h6>
+                                <h6>Location: <span className="fw-normal">{company.companyLocation}</span></h6>
                                 <h6>Jobs <span className="badge bg-success" >{company.companyJob.length}</span></h6>
                             </div>
                         </div>
