@@ -21,6 +21,7 @@ $superLarge: 1700px;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 
 @mixin small {
   @media (min-width: #{$small}) {
@@ -93,19 +94,26 @@ body {
 .pocketProfile {
   border-radius: 20px;
   position: relative;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
   padding: 15px;
+  //background-color: #9b61a6;
+  //background-color: #9E15BF;  
+  color: black;
+  height: fit-content;
 }
 .pocketProfile::before {
   content: "Profile";
+  font-family: "Montserrat", sans-serif;
   position: absolute;
   top: -15px;
   right: 20px;
   font-weight: bold;
   font-size: 1.3rem;
-  background-color: black;
+  background: #4ac6d2;
+  background: #9E15BF;
   color: white;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
   padding: 0px 15px;
   border-radius: 20px;
 }
@@ -119,7 +127,7 @@ body {
   left: 0;
   opacity: 0;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.6);
   transition: opacity 0.3s ease-in-out;
 }
 .pocketProfile:hover::after {
@@ -142,8 +150,8 @@ body {
 
       .card-header {
         color: white;
-        background-color: #00adb5;
-        //background-color: #0B4141;
+        //background-color: #00adb5;
+        background-color: #4ac6d2;
 
         .companyLogo {
           border-radius: 10px;
@@ -220,7 +228,6 @@ body {
   }
 }
 //cardOuterContainer END
-
 
 .card:hover {
   cursor: pointer;
