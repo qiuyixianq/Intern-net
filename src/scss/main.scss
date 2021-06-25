@@ -8,7 +8,7 @@ $emGreen: #32594f;
 $emGreenLight: #196e63;
 $fadedPurple: #e2c8ca;
 $bestOrange: #cf6c58;
-$flatBlue: 2e4494;
+$flatBlue: #2e4494;
 $sandPeach: #fdd5b0;
 
 //custom media query width
@@ -58,6 +58,7 @@ body {
   margin: 0;
   width: 100vw;
   overflow-x: hidden;
+  background-color: whitesmoke;
 }
 
 .mainContent {
@@ -101,6 +102,7 @@ body {
 .cardOuterContainer {
   position: relative;
 
+  //company cardss
   .cardInnerContainer {
     .card {
       position: relative;
@@ -113,6 +115,7 @@ body {
       .card-header {
         color: white;
         background-color: #00adb5;
+        //background-color: #0B4141;
 
         .companyLogo {
           border-radius: 10px;
@@ -126,6 +129,7 @@ body {
     }
   }
 
+  //Details
   .companyDetail {
     position: absolute;
     z-index: 2;

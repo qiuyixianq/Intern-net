@@ -11471,6 +11471,7 @@ body {
   margin: 0;
   width: 100vw;
   overflow-x: hidden;
+  background-color: whitesmoke;
 }
 
 @media (min-width: 1700px) {

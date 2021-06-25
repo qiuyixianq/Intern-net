@@ -17,12 +17,12 @@ export const SearchBar = () => {
 
     //search form anim
     useEffect(() => {
-        const t = gsap.timeline({defaults: {ease: 'power1.out'}});
-        t.fromTo('.form-floating', { opacity: 0, y: "-30%"}, { opacity: 1, y: "0%", duration: 0.5, stagger: 0.15});
+        const t = gsap.timeline({ defaults: { ease: 'power1.out' } });
+        t.fromTo('.form-floating', { opacity: 0, y: "-30%" }, { opacity: 1, y: "0%", duration: 0.5, stagger: 0.15 });
 
         //cleanup func
         return () => t.kill();
-    },[isAdvanceSearch, openAdvanceInput]);
+    }, [isAdvanceSearch, openAdvanceInput]);
 
     //functions
     //onclick =>
@@ -90,11 +90,11 @@ export const SearchBar = () => {
                                 <label htmlFor="companyJobTitle">Job Title</label>
                             </div>
 
-                            <a className="btn btn-info " role="button" href="#companyHeader" onClick={() => advanceSearch()}>Filter</a>
-                            <a className="btn btn-outline-warning ms-2 text-dark" role="button" href="#companyHeader" onClick={() => clearBoxes()}>Reset</a>
+                            <a className="btn btn-info  " role="button" href="#companyHeader" onClick={() => advanceSearch()}>Filter</a>
+                                <a className="btn btn-outline-warning ms-2 text-dark  " role="button" href="#companyHeader" onClick={() => clearBoxes()}>Reset</a>
                         </div>
-                    ) : 
-                    <React.Fragment></React.Fragment>}
+                    ) :
+                        <React.Fragment></React.Fragment>}
                 </div>
             )
         }
@@ -105,11 +105,11 @@ export const SearchBar = () => {
         <div className='searchBarJSX'>
             <div className="d-flex align-items-center " >
                 <div className="btn-group " role="group">
-                    <input type="radio" className="btn-check" name='btnradio' id='normalSearch' autoComplete='off' checked={!isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(false)}  />
-                    <label className="btn btn-outline-primary" htmlFor="normalSearch">Normal</label>
+                    <input type="radio" className="btn-check" name='btnradio' id='normalSearch' autoComplete='off' checked={!isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(false)} />
+                    <label className="btn btn-outline-primary normalSearchBtn" htmlFor="normalSearch">Normal</label>
 
                     <input type="radio" className="btn-check" name="btnradio" id='advanceSearch' autoComplete='off' checked={isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(true)} />
-                    <label className="btn btn-outline-primary" htmlFor="advanceSearch">Advance</label>
+                    <label className="btn btn-outline-primary advanceSearchBtn" htmlFor="advanceSearch">Advance</label>
                 </div>
 
                 {isAdvanceSearch ?
