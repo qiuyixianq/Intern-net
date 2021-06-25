@@ -87,15 +87,43 @@ body {
   input {
     border-radius: 20px;
   }
+}
 
-  @include large {
-    width: 75%;
-    margin: auto;
-  }
-
-  @include superLarge {
-    width: 60%;
-  }
+//PocketProfile
+.pocketProfile {
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  padding: 15px;
+}
+.pocketProfile::before {
+  content: "Profile";
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  background-color: black;
+  color: white;
+  padding: 0px 15px;
+  border-radius: 20px;
+}
+.pocketProfile::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+.pocketProfile:hover::after {
+  opacity: 1;
 }
 
 //CompanyJSX
@@ -155,7 +183,6 @@ body {
 
     .jobCardContainer {
       padding: 5px;
-      
 
       .jobCard {
         border-radius: 10px;
@@ -194,9 +221,6 @@ body {
 }
 //cardOuterContainer END
 
-.test-container {
-  text-align: center;
-}
 
 .card:hover {
   cursor: pointer;
@@ -222,6 +246,7 @@ body {
   opacity: 1;
 }
 
+//pagination
 .companyPageBox {
   list-style: none;
   display: flex;
