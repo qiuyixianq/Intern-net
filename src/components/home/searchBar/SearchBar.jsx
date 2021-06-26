@@ -105,10 +105,10 @@ export const SearchBar = () => {
         <div className='searchBarJSX'>
             <div className="d-flex align-items-center " >
                 <div className="btn-group " role="group">
-                    <input type="radio" className="btn-check" name='btnradio' id='normalSearch' autoComplete='off' checked={!isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(false)} />
+                    <input type="radio" className="btn-check" name='btnradio' id='normalSearch' autoComplete='off' checked={!isAdvanceSearch} onChange={() => {}} onClick={() => setAdvanceSearch(false)} />
                     <label className="btn btn-outline-primary normalSearchBtn" htmlFor="normalSearch">Normal</label>
 
-                    <input type="radio" className="btn-check" name="btnradio" id='advanceSearch' autoComplete='off' checked={isAdvanceSearch} onChange={() => console.log('')} onClick={() => setAdvanceSearch(true)} />
+                    <input type="radio" className="btn-check" name="btnradio" id='advanceSearch' autoComplete='off' checked={isAdvanceSearch} onChange={() => {}} onClick={() => setAdvanceSearch(true)} />
                     <label className="btn btn-outline-primary advanceSearchBtn" htmlFor="advanceSearch">Advance</label>
                 </div>
 

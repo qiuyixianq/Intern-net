@@ -11626,6 +11626,16 @@ body {
   }
 }
 
+.cardOuterContainer .companyDetail .jobCardContainer .jobCard .applyJob {
+  color: white;
+  background-color: #6640f5;
+}
+
+.cardOuterContainer .companyDetail .jobCardContainer .jobCard .appliedJob {
+  background-color: #00bf71;
+  cursor: default;
+}
+
 @media (min-width: 992px) {
   .cardOuterContainer .companyDetail {
     position: relative;
