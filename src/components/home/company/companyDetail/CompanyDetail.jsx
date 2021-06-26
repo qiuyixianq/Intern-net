@@ -7,6 +7,15 @@ export const CompanyDetail = () => {
     const dispatch = useDispatch();
     const { selectedCompany, showDetail } = useSelector(state => state.companyDetail);
 
+    //temp useState user applied company
+    const appliedCompany = [{
+        company: 'iFAST Corporation',
+        job: [
+            { title: 'Software Engineer Intern' }
+        ]
+    }]
+    const [applied, setApplied] = useState(appliedCompany);
+
     //useState for window resize rerender
     const [windowX, setWindowX] = useState(window.innerWidth);
 
@@ -34,6 +43,32 @@ export const CompanyDetail = () => {
         //cleanup
         return () => t.kill();
     }, [selectedCompany, showDetail]);
+
+    //render apply button
+    const renderApplyPill = (company, jobTitle) => {
+        //get user info from store and determine if applied
+        //now experiment with useState
+        const appliedCompany = applied.find(el => el.company === company);
+        console.log(appliedCompany);
+        //has applied in selectedCompany
+        if (appliedCompany) {
+            //identify which job applied
+            if (appliedCompany.job.find(job => job.title === jobTitle)) {
+                //render applied
+                return (
+                    <span role="button" className="badge rounded-pill appliedJob ms-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                        <span> Applied</span>
+                    </span>
+                )
+            } else return <span role="button" className="badge rounded-pill applyJob ms-2">Apply</span>
+
+        }
+        //render apply
+        else return <span role="button" className="badge rounded-pill applyJob ms-2">Apply</span>
+    }
 
 
     //render company detail content 
@@ -120,9 +155,10 @@ export const CompanyDetail = () => {
                         {selectedCompany.companyJob.map((job, index) => {
                             return (
                                 <div className="jobCard" key={index}>
-                                    <div className="d-flex">
+                                    <div className="d-flex align-items-baseline">
                                         <h5>{index + 1}</h5>
                                         <h5 className="ms-2">{job.title}</h5>
+                                        {renderApplyPill(selectedCompany.companyName, job.title)}
                                     </div>
                                     <p>Description: <span>{job.description}</span></p>
                                 </div>

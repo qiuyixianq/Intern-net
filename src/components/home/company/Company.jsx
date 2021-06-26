@@ -120,7 +120,7 @@ export const Company = () => {
     //main render
     return (
         <div>
-            <h5 className="mt-5 mb-3" ref={companyRef} id="companyHeader">Company</h5>
+            <h4 className="mt-2 mb-3" ref={companyRef} id="companyHeader">Company</h4>
             <div className="cardOuterContainer mb-5">
                 {renderCompany()}
 
