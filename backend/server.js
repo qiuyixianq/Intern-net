@@ -11,6 +11,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(cors());
 //Route
 app.use('/company', require('./routes/company'));
+app.use('/login', require('./routes/login'));
+
 
 //Port
 const PORT = process.env.PORT || 4000;
@@ -21,5 +23,5 @@ mongoose.connect(process.env.MONGO_CONNECTION,{useNewUrlParser: true, useUnified
 
 //REST
 app.get('/', (req,res) => {
-    res.send('Hello World');
+    res.send(`Backend Server on PORT ${PORT}`);
 });
