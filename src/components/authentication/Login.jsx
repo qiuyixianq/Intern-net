@@ -7,11 +7,6 @@ const axios = require('axios').default;
 
 export const Login = () => {
 
-    const obj = {
-        username: 'admin123',
-        password: 'admin123'
-    };
-
     //get session
     useEffect(() => {
         const login = async (user) => {
@@ -32,20 +27,12 @@ export const Login = () => {
         const sessionToken = sessionStorage.getItem('token');
         //session available
         if (sessionToken) {
-            const user = JSON.parse(sessionToken);
+            //decrypt
+            const bytes = cryptoJs.AES.decrypt(sessionToken, 'secretRecipe');
+            const user = JSON.parse(bytes.toString(cryptoJs.enc.Utf8));
             login(user);
         }
-
-
     }, []);
-
-
-    const objEnc = cryptoJs.AES.encrypt(JSON.stringify(obj), 'secretRecipe').toString();
-    console.log('Encrypted: ', objEnc);
-
-    const bytes = cryptoJs.AES.decrypt(objEnc, 'secretRecipe');
-    const objDec = JSON.parse(bytes.toString(cryptoJs.enc.Utf8));
-    console.log('Decrypted: ', objDec);
 
 
     const dispatch = useDispatch();
@@ -73,7 +60,8 @@ export const Login = () => {
                         username: res.data.username,
                         password: res.data.password
                     }
-                    sessionStorage.setItem('token', JSON.stringify(loginInfo));
+                    const loginInfoEnc = cryptoJs.AES.encrypt(JSON.stringify(loginInfo), 'secretRecipe').toString();
+                    sessionStorage.setItem('token', loginInfoEnc);
                     dispatch(updateToken(true));
                     dispatch(updateUser(res.data));
                 }
@@ -82,6 +70,7 @@ export const Login = () => {
         }
     }
 
+    //main render
     if (!token) {
         return (
             <div>
