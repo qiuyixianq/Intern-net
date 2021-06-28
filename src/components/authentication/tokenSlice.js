@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const tokenSlice = createSlice({
-    name: 'token',
+    name: 'authentication',
     initialState,
     reducers: {
         updateToken: (state,action) => {
