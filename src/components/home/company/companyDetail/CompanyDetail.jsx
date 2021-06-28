@@ -2,19 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowDetail, setSelectedCompany } from './companyDetailSlice';
+const axios = require('axios').default;
 
 export const CompanyDetail = () => {
     const dispatch = useDispatch();
     const { selectedCompany, showDetail } = useSelector(state => state.companyDetail);
-
-    //temp useState user applied company
-    const appliedCompany = [{
-        company: 'iFAST Corporation',
-        job: [
-            { title: 'Software Engineer Intern' }
-        ]
-    }]
-    const [applied, setApplied] = useState(appliedCompany);
+    const { user } = useSelector(state => state.authentication);
 
     //useState for window resize rerender
     const [windowX, setWindowX] = useState(window.innerWidth);
@@ -25,6 +18,17 @@ export const CompanyDetail = () => {
         dispatch(setSelectedCompany({}));
     }
 
+    const applyJob = async() => {
+        try{
+            //Profile Model & route
+            //axios put $route
+            //dispatch token
+        }
+        catch(err) { console.log(err) }
+    }
+
+
+    //Side effect
     //rerender on resize
     useEffect(() => {
         const handleResize = () => setWindowX(window.innerWidth);
@@ -47,9 +51,8 @@ export const CompanyDetail = () => {
     //render apply button
     const renderApplyPill = (company, jobTitle) => {
         //get user info from store and determine if applied
-        //now experiment with useState
-        const appliedCompany = applied.find(el => el.company === company);
-        console.log(appliedCompany);
+        
+        const appliedCompany = user.appliedJob.find(el => el.company === company);
         //has applied in selectedCompany
         if (appliedCompany) {
             //identify which job applied
@@ -63,11 +66,11 @@ export const CompanyDetail = () => {
                         <span> Applied</span>
                     </span>
                 )
-            } else return <span role="button" className="badge rounded-pill applyJob ms-2">Apply</span>
+            } else return <span role="button" onClick={() => applyJob()} className="badge rounded-pill applyJob ms-2">Apply</span>
 
         }
         //render apply
-        else return <span role="button" className="badge rounded-pill applyJob ms-2">Apply</span>
+        else return <span role="button" onClick={() => applyJob()} className="badge rounded-pill applyJob ms-2">Apply</span>
     }
 
 

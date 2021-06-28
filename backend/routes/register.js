@@ -5,7 +5,7 @@ const User = require('../Models/user_model');
 
 //API
 
-//register
+//POST -> register
 router.post('/', (req, res) => {
     //register
     const { user } = req.body;
@@ -31,4 +31,4 @@ router.post('/', (req, res) => {
         res.send(err);
     }
 
-})
+});

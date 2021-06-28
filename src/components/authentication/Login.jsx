@@ -6,6 +6,11 @@ const cryptoJs = require('crypto-js');
 const axios = require('axios').default;
 
 export const Login = () => {
+    const dispatch = useDispatch();
+    const { token } = useSelector(state => state.authentication);
+    //use Ref
+    const usernameRef = useRef(null);
+    const passwordRef = useRef(null);
 
     //get session
     useEffect(() => {
@@ -32,14 +37,7 @@ export const Login = () => {
             const user = JSON.parse(bytes.toString(cryptoJs.enc.Utf8));
             login(user);
         }
-    }, []);
-
-
-    const dispatch = useDispatch();
-    const { token } = useSelector(state => state.authentication);
-    //use Ref
-    const usernameRef = useRef(null);
-    const passwordRef = useRef(null);
+    }, [dispatch]);
 
     //event func
     const handleLogin = async () => {

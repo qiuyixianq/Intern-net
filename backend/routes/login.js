@@ -6,11 +6,9 @@ const User = require('../Models/user_model');
 
 //API
 
-// register | login 
+// POST -> login 
 router.post('/', async (req, res) => {
     const { user } = req.body;
-
-    //login
     try {
         const result = await User.findOne({ 'username': user.username, 'password': user.password });
         res.json(result);
