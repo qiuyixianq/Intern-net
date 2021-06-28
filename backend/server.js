@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Backend is listening on ${PORT}`));
 
 //MongoDB
-mongoose.connect(process.env.MONGO_CONNECTION,{useNewUrlParser: true, useUnifiedTopology:true}, () => 'Connected to MongoDB');
+mongoose.connect(process.env.MONGO_CONNECTION,{useNewUrlParser: true, useUnifiedTopology:true}, () => console.log('Connected to MongoDB'));
 
 //REST
 app.get('/', (req,res) => {
