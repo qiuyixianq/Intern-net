@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const jobArr = mongoose.Schema({
-    title: { type:String }
-})
+// const jobArr = mongoose.Schema({
+//     title: { type:String }
+// });
 
 const appliedJobArr = mongoose.Schema({
     company: { type:String },
-    job: [jobArr]
-})
+    job: [{type: String}]
+});
 
 const userSchema = mongoose.Schema({
     username: {
