@@ -12,21 +12,6 @@ router.put('/', async (req, res) => {
         const result = await User.findOne({username});
         const userResult = result._doc;
 
-        // const userResult = {
-        //     username: 'admin123',
-        //     password: 'helloworld',
-        //     name: 'admin',
-        //     appliedJob: [{
-        //         company: 'iFAST',
-        //         job: ['software intern']
-        //     },
-        //     {
-        //         company: 'iFAST2',
-        //         job: ['something intern']
-        //     }
-        // ]
-        // };
-
         //user found
         if (Object.keys(userResult).length !== 0) {
             //check if existing saved job in same company

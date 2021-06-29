@@ -11633,7 +11633,6 @@ body {
 
 .cardOuterContainer .companyDetail .jobCardContainer .jobCard .appliedJob {
   background-color: #00bf71;
-  cursor: default;
 }
 
 @media (min-width: 992px) {
