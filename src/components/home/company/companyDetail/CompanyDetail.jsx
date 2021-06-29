@@ -23,6 +23,7 @@ export const CompanyDetail = () => {
             //Profile Model & route
             //axios put $route
             //dispatch token
+            
         }
         catch(err) { console.log(err) }
     }

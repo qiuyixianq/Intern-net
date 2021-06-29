@@ -12,6 +12,8 @@ app.use(cors());
 //Route
 app.use('/company', require('./routes/company'));
 app.use('/login', require('./routes/login'));
+app.use('/register', require('./routes/register'));
+app.use('/profile', require('./routes/profile'));
 
 
 //Port
