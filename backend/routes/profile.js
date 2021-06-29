@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 const User = require('../Models/user_model');
 //API
 //PUT -> save company
@@ -8,23 +9,23 @@ router.put('/', async (req, res) => {
     const { username, companyName, jobTitle } = req.body;
 
     try {
-        //const result = await User.findOne({username});
-        //const userResult = result._doc;
+        const result = await User.findOne({username});
+        const userResult = result._doc;
 
-        const userResult = {
-            username: 'admin123',
-            password: 'helloworld',
-            name: 'admin',
-            appliedJob: [{
-                company: 'iFAST',
-                job: ['software intern']
-            },
-            {
-                company: 'iFAST2',
-                job: ['something intern']
-            }
-        ]
-        };
+        // const userResult = {
+        //     username: 'admin123',
+        //     password: 'helloworld',
+        //     name: 'admin',
+        //     appliedJob: [{
+        //         company: 'iFAST',
+        //         job: ['software intern']
+        //     },
+        //     {
+        //         company: 'iFAST2',
+        //         job: ['something intern']
+        //     }
+        // ]
+        // };
 
         //user found
         if (Object.keys(userResult).length !== 0) {
@@ -41,31 +42,40 @@ router.put('/', async (req, res) => {
 
                 //remove
                 if (savedCompany.job.find( job => job === jobTitle)) {
+                    console.log('exist & remove');
                     //filter out saved job
                     let updatedJob = savedCompany.job.filter(job => job !== jobTitle);
 
-                    //reassign into appliedJob array
-                    updatedAppliedJob[savedCompanyIndex] = {...savedCompany, job: updatedJob};
+                    //reassign into appliedJob array 
+                    //**IMPORANT {...savedCompany} !== savedCompany //Must refer to _doc keyword
+                    updatedAppliedJob[savedCompanyIndex] = {...savedCompany._doc, job: updatedJob};
 
-                    //reassign into user
-                    const updatedUser = {...userResult, appliedJob: updatedAppliedJob};
-                    res.json(updatedUser);
+                    User.findOneAndUpdate({username},{appliedJob: updatedAppliedJob},{new: true},(err,doc) => {
+                        err? console.log(err) : res.json(doc);
+                    });
                 }
                 //append
                 else {
+                    console.log('exist & append');
                     //append new job in 'job' array
-                    updatedAppliedJob[savedCompanyIndex] = { ...savedCompany, job: [...savedCompany.job, jobTitle] };
-                    //reassign into user
-                    const updatedUser = { ...userResult, appliedJob: updatedAppliedJob }
-                    res.json(updatedUser);
+                    //**IMPORANT {...savedCompany} !== savedCompany //Must refer to _doc keyword
+                    updatedAppliedJob[savedCompanyIndex] = { ...savedCompany._doc, job: [...savedCompany.job, jobTitle] };
+
+                    User.findOneAndUpdate({username},{ appliedJob: updatedAppliedJob},{new: true},(err,docs) => {
+                        err? console.log(err) : res.json(docs);
+                    });
                 }
             }
             //new save obj
             else {
+                console.log('!exist & add');
                 //clone appliedJob
                 let updateAppliedJob = [...userResult.appliedJob, { company: companyName, job: [jobTitle] }];
                 const updatedUser = { ...userResult, appliedJob: updateAppliedJob };
-                res.json(updatedUser);
+                
+                User.findOneAndUpdate({username},updatedUser,{new: true},(err,docs) => {
+                    err? console.log(err) : res.json(docs);
+                });
             }
         }
     }
