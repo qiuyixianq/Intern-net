@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowDetail, setSelectedCompany } from './companyDetailSlice';
+import { updateUser } from '../../../authentication/tokenSlice';
 const axios = require('axios').default;
 
 export const CompanyDetail = () => {
@@ -18,12 +19,15 @@ export const CompanyDetail = () => {
         dispatch(setSelectedCompany({}));
     }
 
-    const applyJob = async() => {
+    const applyJob = async(companyName, jobTitle) => {
         try{
             //Profile Model & route
             //axios put $route
             //dispatch token
-            
+            const result = await axios.put('http://localhost:4000/profile', {username: user.username, companyName, jobTitle});
+            const updatedUser = result.data;
+            console.log(updatedUser);
+            dispatch(updateUser(updatedUser));
         }
         catch(err) { console.log(err) }
     }
@@ -52,26 +56,25 @@ export const CompanyDetail = () => {
     //render apply button
     const renderApplyPill = (company, jobTitle) => {
         //get user info from store and determine if applied
-        
         const appliedCompany = user.appliedJob.find(el => el.company === company);
         //has applied in selectedCompany
         if (appliedCompany) {
             //identify which job applied
-            if (appliedCompany.job.find(job => job.title === jobTitle)) {
+            if (appliedCompany.job.find(job => job === jobTitle)) {
                 //render applied
                 return (
-                    <span role="button" className="badge rounded-pill appliedJob ms-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                    <span role="button" onClick={() => applyJob(company, jobTitle)} className="badge rounded-pill appliedJob ms-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" className="bi bi-check2" viewBox="0 0 16 16">
                             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
                         </svg>
                         <span> Applied</span>
                     </span>
                 )
-            } else return <span role="button" onClick={() => applyJob()} className="badge rounded-pill applyJob ms-2">Apply</span>
+            } else return <span role="button" onClick={() => applyJob(company, jobTitle)} className="badge rounded-pill applyJob ms-2">Apply</span>
 
         }
         //render apply
-        else return <span role="button" onClick={() => applyJob()} className="badge rounded-pill applyJob ms-2">Apply</span>
+        else return <span role="button" onClick={() => applyJob(company, jobTitle)} className="badge rounded-pill applyJob ms-2">Apply</span>
     }
 
 
