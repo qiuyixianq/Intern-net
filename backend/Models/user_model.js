@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
-// const jobArr = mongoose.Schema({
-//     title: { type:String }
-// });
-
-const appliedJobArr = mongoose.Schema({
+const savedJobArr = mongoose.Schema({
     company: { type:String },
     job: [{type: String}]
 });
@@ -25,7 +21,7 @@ const userSchema = mongoose.Schema({
         required: true
     },
 
-    appliedJob: [appliedJobArr]
+    savedJob: [savedJobArr]
 });
 
 module.exports = mongoose.model('users', userSchema);

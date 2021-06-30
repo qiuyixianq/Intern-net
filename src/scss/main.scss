@@ -203,15 +203,14 @@ body {
           margin-bottom: 2em;
         }
 
-        .applyJob {
-          color: white;
-          //background-color: #ff3b63;
-          background-color: #6640f5;
+        .favButton:hover {
+          transform: scale(1.1, 1.1);
         }
 
-        .appliedJob {
-          background-color: #00bf71;
+        .favButton:active {
+          transform: scale((0.9,0.9));
         }
+
       }
     }
 

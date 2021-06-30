@@ -6,7 +6,7 @@ const initialState = {
         username: '',
         password: '',
         name: '',
-        appliedJob: []
+        savedJob: []
     }
 };
 
