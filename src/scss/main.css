@@ -11626,13 +11626,14 @@ body {
   }
 }
 
-.cardOuterContainer .companyDetail .jobCardContainer .jobCard .applyJob {
-  color: white;
-  background-color: #6640f5;
+.cardOuterContainer .companyDetail .jobCardContainer .jobCard .favButton:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 
-.cardOuterContainer .companyDetail .jobCardContainer .jobCard .appliedJob {
-  background-color: #00bf71;
+.cardOuterContainer .companyDetail .jobCardContainer .jobCard .favButton:active {
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
 }
 
 @media (min-width: 992px) {
