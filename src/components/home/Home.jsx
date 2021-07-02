@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { clearUser } from '../authentication/tokenSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { Footer } from './Footer/Footer';
 
 export const Home = () => {
     const { token } = useSelector(state => state.authentication);
@@ -79,41 +80,44 @@ export const Home = () => {
 
     //main render
     // no login token
-    if(!token) return (
+    if (!token) return (
         <Redirect to='/login' />
     )
     //logged in
     else {
         return (
-            <div className="mainContent">
-                <div className="mainBar container-fluid">
-                    <header className="d-flex flex-wrap justify-content-between border-bottom py-2 mb-3 ">
-                        <span className="d-flex align-items-center  text-dark text-decoration-none">
-                            <span className="fs-2 appName">Intern-net</span>
-                        </span>
-    
-                        <ul className="nav nav-pills">
-                            <li className="nav-item">
-                                <Link className="nav-link" to='/profile' >Profile</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to='/' onClick={() => handleLogout()} >
-                                    Logout
-                                </Link>
-                            </li>
-                        </ul>
-                    </header>
-                </div>
-                <div className="container-fluid mt-4">
-                    <div className="row justify-content-between">
-                        <div className="col col-lg-7">
-                            <SearchBar />
-                        </div>
-                        {renderPocketProfile()}
+            <React.Fragment>
+                <div className="mainContent">
+                    <div className="mainBar container-fluid">
+                        <header className="d-flex flex-wrap justify-content-between border-bottom py-2 mb-3 ">
+                            <span className="d-flex align-items-center  text-dark text-decoration-none">
+                                <span className="fs-2 appName">Intern-net</span>
+                            </span>
+
+                            <ul className="nav nav-pills">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to='/profile' >Profile</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to='/' onClick={() => handleLogout()} >
+                                        Logout
+                                    </Link>
+                                </li>
+                            </ul>
+                        </header>
                     </div>
+                    <div className="container-fluid mt-4">
+                        <div className="row justify-content-between">
+                            <div className="col col-lg-7">
+                                <SearchBar />
+                            </div>
+                            {renderPocketProfile()}
+                        </div>
+                    </div>
+                    <Company />
                 </div>
-                <Company />
-            </div>
+                <Footer />
+            </React.Fragment>
         )
     }
 }
