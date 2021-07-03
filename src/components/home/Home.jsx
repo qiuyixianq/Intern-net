@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { clearUser } from '../authentication/tokenSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { Footer } from './Footer/Footer';
+import { Footer } from './footer/Footer';
 
 export const Home = () => {
     const { token } = useSelector(state => state.authentication);
