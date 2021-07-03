@@ -111,7 +111,7 @@ export const Company = () => {
         }
         else {
             if ((searchString !== '' && !isAdvanceSearch) || (advanceSearchObject !== null && isAdvanceSearch))
-                return <div>No Company Found 😐 </div>
+                return <div className="cardInnerContainer">No Company Found 😐 </div>
             else return <div>Loading ...</div>
         }
     }
