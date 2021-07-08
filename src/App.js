@@ -21,12 +21,12 @@ function App() {
             <Registration />
           </Route>
 
-          <Route path='/home' exact>
-            <Home />
-          </Route>
-
           <Route path='/login' exact>
             <Login />
+          </Route>
+
+          <Route path='/home' exact>
+            <Home />
           </Route>
 
         </Switch>
