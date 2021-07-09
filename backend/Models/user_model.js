@@ -6,8 +6,8 @@ const savedJobArr = mongoose.Schema({
 });
 
 const userSchema = mongoose.Schema({
-    username: {
-        type:String,
+    email: {
+        type: String,
         required: true
     },
 
@@ -16,7 +16,27 @@ const userSchema = mongoose.Schema({
         required: true
     },
 
-    name: {
+    firstName: {
+        type: String,
+        required: true
+    },
+
+    surName: {
+        type: String,
+        required: true
+    },
+
+    mobile: {
+        type: String,
+    },
+
+
+    birthday: {
+        type: String,
+        required: true
+    },
+
+    gender: {
         type: String,
         required: true
     },

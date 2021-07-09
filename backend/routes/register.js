@@ -11,21 +11,23 @@ router.post('/', async (req, res) => {
     const { user } = req.body;
 
     try {
-        const result = await User.find({ 'username': user.username });
+        const result = await User.find({ 'email': user.email });
         //username available
         if (result.length === 0) {
             //create new user
             const newUser = User({
-                username: user.username,
+                email: user.email,
                 password: user.password,
-                name: user.name,
-                //to be added more
+                firstName: user.firstName,
+                surName: user.surName,
+                mobile: user.mobile,
+                birthday: user.birthday,
+                gender: user.gender
             });
-
-            newUser.save(err => err ? res.send(err) : res.send('User registered'));
+            newUser.save(err => err ? res.send(err) : res.json({registrationSuccess: true}));
         }
         //username existed
-        else res.send('username existed');
+        else res.json({registrationSuccess: false});
 
     } catch (err) {
         res.send(err);
