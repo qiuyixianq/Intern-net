@@ -9,12 +9,12 @@ export const Login = () => {
     const dispatch = useDispatch();
     const { token } = useSelector(state => state.authentication);
     //use Ref
-    const usernameRef = useRef(null);
+    const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
     //get session
     useEffect(() => {
-        const login = async (user) => {
+        const login = async user => {
             try {
                 const res = await axios.post('http://localhost:4000/login', { user });
                 //invalid 
@@ -41,21 +41,21 @@ export const Login = () => {
 
     //event func
     const handleLogin = async () => {
-        const username = usernameRef.current.value;
+        const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        if (!username || !password) alert('Please enter login info');
+        if (!email || !password) alert('Please enter login info');
         else {
             //backend check for account
-            const user = { username, password };
+            const user = { email, password };
             try {
-                const res = await axios.post('http://localhost:4000/login', { user })
+                const res = await axios.post('http://localhost:4000/login', { user });
                 //invalid 
                 if (!res.data) alert('Invalid username or password');
 
                 //valid
                 else {
                     const loginInfo = {
-                        username: res.data.username,
+                        email: res.data.email,
                         password: res.data.password
                     }
                     const loginInfoEnc = cryptoJs.AES.encrypt(JSON.stringify(loginInfo), 'secretRecipe').toString();
@@ -75,8 +75,8 @@ export const Login = () => {
                 <div>
                     <center>
                         <h3>Login</h3>
-                        <label htmlFor="username">Username: </label>
-                        <input type="text" id="username" ref={usernameRef} />
+                        <label htmlFor="email">Email: </label>
+                        <input type="text" id="email" ref={emailRef} />
 
                         <br />
                         <label htmlFor="pass">Password: </label>
