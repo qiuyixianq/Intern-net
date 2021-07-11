@@ -11492,6 +11492,7 @@ body {
 
 .mainContent .appName {
   font-family: "Lobster Two", cursive;
+  color: black;
 }
 
 @media (min-width: 768px) {

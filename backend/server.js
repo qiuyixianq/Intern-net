@@ -5,6 +5,12 @@ const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
 const cors = require('cors');
 
+//!SECURITY NOTE: 
+/*
+*Bad Practice in real life (for assignment's sake lmao)
+Backend username password is saved tgt with user info
+althrough i specify it as 'token'.
+*/
 
 //Middleware
 app.use(express.json());
