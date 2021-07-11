@@ -11610,6 +11610,10 @@ body {
   overscroll-behavior-y: contain;
 }
 
+.cardOuterContainer .companyDetail .divider {
+  background-color: rgba(136, 136, 136, 0.11);
+}
+
 .cardOuterContainer .companyDetail .btnCloseContainer {
   text-align: right;
 }

@@ -1,0 +1,12 @@
+{
+    "user": {
+        "email": "qiuyixianq@gmail.com",
+        "password": "password",
+        "firstName": "Yee Xiang",
+        "surName": "Khoo",
+        "mobile": "0103517355",
+        "location": "Selangor, Malaysia",
+        "birthday": "Date String",
+        "gender": "Male"
+    }
+}
