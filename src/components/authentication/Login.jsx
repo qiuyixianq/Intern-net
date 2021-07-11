@@ -50,13 +50,16 @@ export const Login = () => {
             try {
                 const res = await axios.post('http://localhost:4000/login', { user });
                 //invalid 
-                if (!res.data) alert('Invalid username or password');
+                if (!res.data) {
+                    console.log('invalid');
+                    alert('Invalid username or password');
+                }
 
                 //valid
                 else {
                     const loginInfo = {
-                        email: res.data.email,
-                        password: res.data.password
+                        email: email,
+                        password: password
                     }
                     const loginInfoEnc = cryptoJs.AES.encrypt(JSON.stringify(loginInfo), 'secretRecipe').toString();
                     sessionStorage.setItem('token', loginInfoEnc);
