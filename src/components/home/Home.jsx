@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { gsap } from 'gsap';
 import { Company } from './company/Company';
 import { SearchBar } from './searchBar/SearchBar';
-import { gsap } from 'gsap';
-import { Link } from 'react-router-dom';
-import { clearUser } from '../authentication/tokenSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavBar } from './navbar/NavBar';
 import { Footer } from './footer/Footer';
+
 
 export const Home = () => {
     const { token } = useSelector(state => state.authentication);
     const [windowX, setWindowX] = useState(window.innerWidth);
-    const dispatch = useDispatch();
 
     //mainBar anim
     useEffect(() => {
@@ -30,11 +29,7 @@ export const Home = () => {
         return () => window.removeEventListener('resize', handleResize);
     });
 
-    //event func
-    const handleLogout = () => {
-        dispatch(clearUser());
-        sessionStorage.clear();
-    }
+
 
     //pocket profile
     const renderPocketProfile = () => {
@@ -88,24 +83,8 @@ export const Home = () => {
         return (
             <React.Fragment>
                 <div className="mainContent">
-                    <div className="mainBar container-fluid">
-                        <header className="d-flex flex-wrap justify-content-between border-bottom py-2 mb-3 ">
-                            <span className="d-flex align-items-center  text-dark text-decoration-none">
-                                <span className="fs-2 appName">Intern-net</span>
-                            </span>
+                    <NavBar />
 
-                            <ul className="nav nav-pills">
-                                <li className="nav-item">
-                                    <Link className="nav-link" to='/profile' >Profile</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to='/' onClick={() => handleLogout()} >
-                                        Logout
-                                    </Link>
-                                </li>
-                            </ul>
-                        </header>
-                    </div>
                     <div className="container-fluid mt-4">
                         <div className="row justify-content-between">
                             <div className="col col-lg-7">
