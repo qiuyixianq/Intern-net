@@ -12,12 +12,13 @@ export const NavBar = () => {
         sessionStorage.clear();
     }
 
-
     return (
         <div className="mainBar container-fluid">
             <header className="d-flex flex-wrap justify-content-between border-bottom py-2 mb-3 ">
                 <span className="d-flex align-items-center  text-dark text-decoration-none">
-                    <span className="fs-2 appName">Intern-net</span>
+                    <Link to='/home' className="text-decoration-none ">
+                        <span className="fs-2 appName">Intern-net</span>
+                    </Link>
                 </span>
 
                 <ul className="nav nav-pills">
