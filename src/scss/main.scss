@@ -186,6 +186,10 @@ body {
     overflow-y: scroll;
     overscroll-behavior-y: contain;
 
+    .divider {
+      background-color: rgba(136, 136, 136, 0.11);
+    }
+
     //mobile only
     .btnCloseContainer {
       text-align: right;

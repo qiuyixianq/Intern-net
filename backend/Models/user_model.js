@@ -30,6 +30,10 @@ const userSchema = mongoose.Schema({
         type: String,
     },
 
+    location: {
+        type: String,
+        required: true
+    },
 
     birthday: {
         type: String,

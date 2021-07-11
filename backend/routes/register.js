@@ -21,6 +21,7 @@ router.post('/', async (req, res) => {
                 firstName: user.firstName,
                 surName: user.surName,
                 mobile: user.mobile,
+                location: user.location,
                 birthday: user.birthday,
                 gender: user.gender
             });
