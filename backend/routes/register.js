@@ -23,7 +23,8 @@ router.post('/', async (req, res) => {
                 mobile: user.mobile,
                 location: user.location,
                 birthday: user.birthday,
-                gender: user.gender
+                gender: user.gender,
+                profession: user.profession,
             });
             newUser.save(err => err ? res.send(err) : res.json({registrationSuccess: true}));
         }

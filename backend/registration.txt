@@ -7,6 +7,7 @@
         "mobile": "0103517355",
         "location": "Selangor, Malaysia",
         "birthday": "Date String",
-        "gender": "Male"
+        "gender": "Male",
+        "profession": "Software Engineering"
     }
 }

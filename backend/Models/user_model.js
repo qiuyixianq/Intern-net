@@ -45,6 +45,11 @@ const userSchema = mongoose.Schema({
         required: true
     },
 
+    profession: {
+        type: String,
+        required: true
+    },
+
     savedJob: [savedJobArr]
 });
 
