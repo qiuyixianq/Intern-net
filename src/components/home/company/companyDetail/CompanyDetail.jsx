@@ -38,7 +38,7 @@ export const CompanyDetail = () => {
             try {
                 const result = await axios.post('http://localhost:4000/company/comment', { companyName: selectedCompany.companyName, comment, user: user.firstName });
                 setComments(result.data);
-            }catch(err) { console.log(err) }
+            } catch (err) { console.log(err) }
         }
     }
 
@@ -127,11 +127,14 @@ export const CompanyDetail = () => {
     //render comment section
     const renderComment = () => {
         if (comments.length === 0) {
-            return <p>No comment</p>
+            return <p className="text-muted">No comment</p>
         }
         else {
             return comments.map((commentObj, index) => (
-                <p key={index}>{commentObj.user}: <span>{commentObj.comment}</span></p>
+                <div key={index} className="d-flex align-items-center">
+                    <p className="me-1 badge rounded-pill bg-light text-dark">{commentObj.user}</p>
+                    <p>: {commentObj.comment}</p>
+                </div>
             ));
         }
     }
@@ -240,14 +243,16 @@ export const CompanyDetail = () => {
                     {/* Pulic Comment */}
                     <div>
                         <h5>Comment</h5>
-                        {renderComment()}
+                        <div className="commentBox">
+                            {renderComment()}
+                        </div>
 
                         <div className="d-flex">
-                            <div className="form-floating">
-                                <textarea ref={commentRef} className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: '70px' }} />
-                                <label htmlFor="floatingTextarea2" style={{ color: 'black' }}>Comments</label>
+                            <div className="form-floating commentInput">
+                                <textarea ref={commentRef} className="form-control" placeholder="Leave a comment" id="floatingTextarea2" style={{ height: '70px' }} maxLength={100} />
+                                <label htmlFor="floatingTextarea2" style={{ color: 'black' }}>Leave a comment</label>
                             </div>
-                            <button onClick={() => sendComment()}>send</button>
+                            <button onClick={() => sendComment()} className="sendComment btn btn-success">send</button>
                         </div>
                     </div>
                 </div>

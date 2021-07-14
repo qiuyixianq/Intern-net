@@ -186,6 +186,22 @@ body {
     overflow-y: scroll;
     overscroll-behavior-y: contain;
 
+    
+
+    @include large {
+      position: relative;
+      width: 65%;
+      min-height: 96vh;
+      height: max-content;
+      padding: 20px 50px;
+      left: 1%;
+      opacity: 1;
+    }
+
+    @include superLarge {
+      padding: 20px 100px;
+    }
+
     .divider {
       background-color: rgba(136, 136, 136, 0.11);
     }
@@ -223,19 +239,34 @@ body {
       }
     }
 
-    @include large {
-      position: relative;
-      width: 65%;
-      min-height: 96vh;
-      height: max-content;
-      padding: 20px 50px;
-      left: 1%;
-      opacity: 1;
+    .commentBox {
+      max-height: 200px;
+      overflow-y: scroll;
     }
 
-    @include superLarge {
-      padding: 20px 100px;
+    .commentInput {
+      width: 80%;
+      max-height: 200px;
+
+      @include small {
+        width: 90%;
+      }
     }
+
+    .sendComment {
+      position: relative;
+      width: 20%;
+      border-radius: 0px 10px 10px 0px;
+
+      @include small {
+        width: 10%
+      }
+    }
+    
+  }
+
+  .companyDetail::-webkit-scrollbar{
+    display: none;
   }
   //CompanyDetail END
 
