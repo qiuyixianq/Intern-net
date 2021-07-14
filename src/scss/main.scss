@@ -72,6 +72,20 @@ body {
     color: black;
   }
 
+  .navActive {
+    position: relative;
+  }
+
+  .navActive::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background-color: blue;
+  }
+
   @include medium {
     width: 75%;
     margin: auto;
