@@ -69,7 +69,7 @@ router.get('/comment', async(req, res) => {
 });
 
 router.post('/comment', async (req, res) => {
-    const { companyName, comment } = req.body;
+    const { companyName, comment, user } = req.body;
 
     try {
         const result = await CompanyComment.findOne({ 'companyName': companyName });
@@ -77,7 +77,7 @@ router.post('/comment', async (req, res) => {
         if (!result) {
             const newComment = new CompanyComment({
                 companyName,
-                comments: [comment]
+                comments: [{user,comment}]
             });
             newComment.save(err => err? res.send(err) : res.send(newComment.comments));
         }
@@ -85,7 +85,7 @@ router.post('/comment', async (req, res) => {
         else {
             CompanyComment.findOneAndUpdate(
                 { 'companyName': companyName },
-                { $push: { comments: comment } },
+                { $push: { comments: {user,comment} } },
                 { new: true },
                 ((err, doc) => err ? res.json(err) : res.json(doc.comments))
             );
