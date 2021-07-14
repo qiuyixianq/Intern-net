@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowDetail, setSelectedCompany } from './companyDetailSlice';
@@ -7,8 +7,10 @@ const axios = require('axios').default;
 
 export const CompanyDetail = () => {
     const dispatch = useDispatch();
+    const [comments, setComments] = useState([]);
     const { selectedCompany, showDetail } = useSelector(state => state.companyDetail);
     const { user } = useSelector(state => state.authentication);
+    const commentRef = useRef(null);
 
     //useState for window resize rerender
     const [windowX, setWindowX] = useState(window.innerWidth);
@@ -28,8 +30,36 @@ export const CompanyDetail = () => {
         catch (err) { console.log(err) }
     }
 
+    const sendComment = async () => {
+        const comment = commentRef.current.value;
+        commentRef.current.value = '';
+        if (!comment) alert('Please Enter Your Message');
+        else {
+            try {
+                const result = await axios.post('http://localhost:4000/company/comment', { companyName: selectedCompany.companyName, comment });
+                setComments(result.data);
+            }catch(err) { console.log(err) }
+        }
+    }
+
 
     //Side effect
+    //fetch company comment when selected
+    useEffect(() => {
+        const fetchComment = async () => {
+            try {
+                const result = await axios.get('http://localhost:4000/company/comment', { params: { companyName: selectedCompany.companyName } });
+                setComments(result.data);
+            }
+            catch (err) { console.log(err) }
+
+        }
+
+        if (Object.keys(selectedCompany).length !== 0) fetchComment();
+
+    }, [selectedCompany]);
+
+
     //rerender on resize
     useEffect(() => {
         const handleResize = () => setWindowX(window.innerWidth);
@@ -48,6 +78,8 @@ export const CompanyDetail = () => {
         //cleanup
         return () => t.kill();
     }, [selectedCompany, showDetail]);
+
+
 
     //render saved button
     const renderSavePill = (company, jobTitle) => {
@@ -80,8 +112,6 @@ export const CompanyDetail = () => {
 
     //render apply button
     const renderApplyButton = (company, job) => {
-        console.log(company);
-        console.log(job);
         return (
             <a
                 role="button"
@@ -92,6 +122,18 @@ export const CompanyDetail = () => {
                 Apply
             </a>
         )
+    }
+
+    //render comment section
+    const renderComment = () => {
+        if (comments.length === 0) {
+            return <p>No comment</p>
+        }
+        else {
+            return comments.map((comment, index) => (
+                <p key={index}>{comment}</p>
+            ));
+        }
     }
 
 
@@ -193,6 +235,21 @@ export const CompanyDetail = () => {
                             )
                         })}
                     </section>
+
+
+                    {/* Pulic Comment */}
+                    <div>
+                        <h5>Comment</h5>
+                        {renderComment()}
+
+                        <div className="d-flex">
+                            <div className="form-floating">
+                                <textarea ref={commentRef} className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: '70px' }} />
+                                <label htmlFor="floatingTextarea2" style={{ color: 'black' }}>Comments</label>
+                            </div>
+                            <button onClick={() => sendComment()}>send</button>
+                        </div>
+                    </div>
                 </div>
             </main>
         )

@@ -3,43 +3,44 @@ const router = express.Router();
 
 //Models
 const Company = require('../Models/company_model');
-
+const CompanyComment = require('../Models/comment_model');
 
 //API
-router.get('/', (req,res) => {
+// root
+router.get('/', (req, res) => {
     const { isAdvanceSearch } = req.query;
-    
+
     //normal search
-    if(isAdvanceSearch === 'false'){
+    if (isAdvanceSearch === 'false') {
         const { searchString } = req.query;
-        if(searchString){
+        if (searchString) {
             //with filter
-            Company.find({"companyName": {"$regex": searchString, "$options": "i"}}, (err,docs) => {
-                err? res.json(err) : res.json(docs);
+            Company.find({ "companyName": { "$regex": searchString, "$options": "i" } }, (err, docs) => {
+                err ? res.json(err) : res.json(docs);
             });
-        }else{
+        } else {
             //no filter
-            Company.find((err,docs) => err? res.json(err) : res.json(docs));
+            Company.find((err, docs) => err ? res.json(err) : res.json(docs));
         }
     }
     //advance search
-    else{
+    else {
         const obj = JSON.parse(req.query.advanceSearchObject);
         let { companyName, companyIndustry, companyLocation, companyJobTitle } = obj;
-        
-        Company.find({ 
-            "companyName": { "$regex": companyName? companyName+'' : '', "$options": "i"},
-            "companyIndustry": { "$regex": companyIndustry? companyIndustry+'' : '', "$options": "i"},
-            "companyLocation": { "$regex": companyLocation? companyLocation+'' : '', "$options": "i"},
-            "companyJob.title": { "$regex": companyJobTitle? companyJobTitle+'' : '', "$options": "i"}
-        }, 
-        (err,docs) => {
-            err? res.json(err) : res.json(docs);
-        });
-    }
-})
 
-router.post('/', (req,res) => {
+        Company.find({
+            "companyName": { "$regex": companyName ? companyName + '' : '', "$options": "i" },
+            "companyIndustry": { "$regex": companyIndustry ? companyIndustry + '' : '', "$options": "i" },
+            "companyLocation": { "$regex": companyLocation ? companyLocation + '' : '', "$options": "i" },
+            "companyJob.title": { "$regex": companyJobTitle ? companyJobTitle + '' : '', "$options": "i" }
+        },
+            (err, docs) => {
+                err ? res.json(err) : res.json(docs);
+            });
+    }
+});
+
+router.post('/', (req, res) => {
     const { name, website, size, type, industry, location, job, imgsrc } = req.body;
     const newCompany = new Company({
         companyName: name,
@@ -54,6 +55,46 @@ router.post('/', (req,res) => {
 
     newCompany.save(err => err ? res.send(err) : res.send('company saved'));
 });
+
+// comment
+router.get('/comment', async(req, res) => {
+    const { companyName } = req.query;
+    console.log(companyName);
+
+    try{
+        const result = await CompanyComment.findOne({ 'companyName': companyName});
+        if(!result) res.json([]);
+        else res.json(result.comments);
+    }catch(err) { console.log(err) }
+});
+
+router.post('/comment', async (req, res) => {
+    const { companyName, comment } = req.body;
+
+    try {
+        const result = await CompanyComment.findOne({ 'companyName': companyName });
+        //no comment; create new
+        if (!result) {
+            const newComment = new CompanyComment({
+                companyName,
+                comments: [comment]
+            });
+            newComment.save(err => err? res.send(err) : res.send(newComment.comments));
+        }
+        //have comment; push new
+        else {
+            CompanyComment.findOneAndUpdate(
+                { 'companyName': companyName },
+                { $push: { comments: comment } },
+                { new: true },
+                ((err, doc) => err ? res.json(err) : res.json(doc.comments))
+            );
+        }
+    } catch (err) { console.log(err) }
+
+
+});
+
 
 module.exports = router;
 
