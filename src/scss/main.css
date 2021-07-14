@@ -11489,6 +11489,20 @@ body {
   color: black;
 }
 
+.mainContent .navActive {
+  position: relative;
+}
+
+.mainContent .navActive::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background-color: blue;
+}
+
 @media (min-width: 768px) {
   .mainContent {
     width: 75%;

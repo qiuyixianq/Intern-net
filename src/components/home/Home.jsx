@@ -12,14 +12,6 @@ export const Home = () => {
     const { token, user } = useSelector(state => state.authentication);
     const [windowX, setWindowX] = useState(window.innerWidth);
 
-    //mainBar anim
-    useEffect(() => {
-        const t = gsap.timeline({ defaults: { ease: 'power1' } });
-        t.fromTo('.mainBar', { opacity: 0 }, { opacity: 1, duration: 1 });
-
-        return () => t.kill();
-    }, []);
-
     //rerender on resize
     useEffect(() => {
         const handleResize = () => setWindowX(window.innerWidth);
