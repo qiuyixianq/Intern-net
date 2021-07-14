@@ -65,12 +65,7 @@ body {
 }
 
 .mainContent {
-  padding: 0px 20px;
-  .mainBar {
-    @include superLarge {
-      width: 75%;
-    }
-  }
+  padding: 0px 20px 20px 20px;
 
   .appName {
     font-family: "Lobster Two", cursive;
@@ -84,6 +79,10 @@ body {
 
   @include large {
     width: 99%;
+  }
+
+  @include superLarge {
+    width: 85%;
   }
 }
 

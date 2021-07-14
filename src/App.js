@@ -9,7 +9,7 @@ import { Profile } from './components/home/profile/Profile';
 
 function App() {
   return (
-    <div className="main">
+    <React.Fragment>
       <Router>
         <Switch>
           <Route path='/' exact>
@@ -36,7 +36,7 @@ function App() {
 
         </Switch>
       </Router>
-    </div>
+    </React.Fragment>
   );
 }
 

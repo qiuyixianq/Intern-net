@@ -11481,13 +11481,7 @@ body {
 }
 
 .mainContent {
-  padding: 0px 20px;
-}
-
-@media (min-width: 1700px) {
-  .mainContent .mainBar {
-    width: 75%;
-  }
+  padding: 0px 20px 20px 20px;
 }
 
 .mainContent .appName {
@@ -11505,6 +11499,12 @@ body {
 @media (min-width: 992px) {
   .mainContent {
     width: 99%;
+  }
+}
+
+@media (min-width: 1700px) {
+  .mainContent {
+    width: 85%;
   }
 }
 
