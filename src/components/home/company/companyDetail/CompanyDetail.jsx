@@ -7,7 +7,7 @@ const axios = require('axios').default;
 
 export const CompanyDetail = () => {
     const dispatch = useDispatch();
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState([]); //[{...}]
     const { selectedCompany, showDetail } = useSelector(state => state.companyDetail);
     const { user } = useSelector(state => state.authentication);
     const commentRef = useRef(null);
@@ -36,7 +36,7 @@ export const CompanyDetail = () => {
         if (!comment) alert('Please Enter Your Message');
         else {
             try {
-                const result = await axios.post('http://localhost:4000/company/comment', { companyName: selectedCompany.companyName, comment });
+                const result = await axios.post('http://localhost:4000/company/comment', { companyName: selectedCompany.companyName, comment, user: user.firstName });
                 setComments(result.data);
             }catch(err) { console.log(err) }
         }
@@ -130,8 +130,8 @@ export const CompanyDetail = () => {
             return <p>No comment</p>
         }
         else {
-            return comments.map((comment, index) => (
-                <p key={index}>{comment}</p>
+            return comments.map((commentObj, index) => (
+                <p key={index}>{commentObj.user}: <span>{commentObj.comment}</span></p>
             ));
         }
     }
