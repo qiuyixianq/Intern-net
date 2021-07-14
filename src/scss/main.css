@@ -11610,6 +11610,26 @@ body {
   overscroll-behavior-y: contain;
 }
 
+@media (min-width: 992px) {
+  .cardOuterContainer .companyDetail {
+    position: relative;
+    width: 65%;
+    min-height: 96vh;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 20px 50px;
+    left: 1%;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1700px) {
+  .cardOuterContainer .companyDetail {
+    padding: 20px 100px;
+  }
+}
+
 .cardOuterContainer .companyDetail .divider {
   background-color: rgba(136, 136, 136, 0.11);
 }
@@ -11650,24 +11670,36 @@ body {
           transform: scale(0.9, 0.9);
 }
 
-@media (min-width: 992px) {
-  .cardOuterContainer .companyDetail {
-    position: relative;
-    width: 65%;
-    min-height: 96vh;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-    padding: 20px 50px;
-    left: 1%;
-    opacity: 1;
+.cardOuterContainer .companyDetail .commentBox {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.cardOuterContainer .companyDetail .commentInput {
+  width: 80%;
+  max-height: 200px;
+}
+
+@media (min-width: 576px) {
+  .cardOuterContainer .companyDetail .commentInput {
+    width: 90%;
   }
 }
 
-@media (min-width: 1700px) {
-  .cardOuterContainer .companyDetail {
-    padding: 20px 100px;
+.cardOuterContainer .companyDetail .sendComment {
+  position: relative;
+  width: 20%;
+  border-radius: 0px 10px 10px 0px;
+}
+
+@media (min-width: 576px) {
+  .cardOuterContainer .companyDetail .sendComment {
+    width: 10%;
   }
+}
+
+.cardOuterContainer .companyDetail::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 992px) {
