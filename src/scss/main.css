@@ -11817,7 +11817,7 @@ body {
   background: #525252;
 }
 
-.loginlogin {
+.ted {
   /*
 #login-form
 {
@@ -11826,7 +11826,7 @@ body {
 */
 }
 
-.loginlogin .full-page {
+.ted .full-page {
   height: 100%;
   width: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/src/cssPublic/login/0.jpg");
@@ -11836,7 +11836,8 @@ body {
   position: absolute;
 }
 
-.loginlogin .fontlogo:link {
+.ted .fontlogo:link {
+  text-decoration: none;
   font-size: 50px;
   color: white;
   font-family: "Lobster Two", cursive;
@@ -11844,7 +11845,7 @@ body {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.loginlogin .navbar {
+.ted .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11857,31 +11858,31 @@ body {
   padding-top: 50px;
 }
 
-.loginlogin nav {
+.ted nav {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   text-align: right;
 }
 
-.loginlogin nav ul {
+.ted nav ul {
   display: inline-block;
   list-style: none;
 }
 
-.loginlogin nav ul li {
+.ted nav ul li {
   display: inline-block;
   margin-right: 70px;
 }
 
-.loginlogin nav ul li a {
+.ted nav ul li a {
   text-decoration: none;
   font-size: 20px;
   color: white;
   font-family: sans-serif;
 }
 
-.loginlogin nav ul li button {
+.ted nav ul li button {
   font-size: 20px;
   color: white;
   outline: none;
@@ -11891,41 +11892,34 @@ body {
   font-family: sans-serif;
 }
 
-.loginlogin nav ul li button:hover {
+.ted nav ul li button:hover {
   color: aqua;
 }
 
-.loginlogin nav ul li a:hover {
+.ted nav ul li a:hover {
   color: aqua;
 }
 
-.loginlogin a {
-  text-decoration: none;
-  color: palevioletred;
-  font-size: 28px;
-}
-
-.loginlogin .form-box .registerBox {
-  width: 380px;
-  height: 900px;
+.ted .form-box .registerBox {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
   position: relative;
   margin: 2% auto;
   background: #dbdbdb;
   padding: 10px;
-  overflow: hidden;
 }
 
-.loginlogin .form-box .loginBox {
+.ted .form-box .loginBox {
   width: 380px;
   height: 500px;
   position: relative;
   margin: 2% auto;
   background: #dbdbdb;
   padding: 10px;
-  overflow: hidden;
 }
 
-.loginlogin .button-box {
+.ted .button-box {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -11936,7 +11930,7 @@ body {
   border-radius: 30px;
 }
 
-.loginlogin .toggle-btn {
+.ted .toggle-btn {
   padding: 10px 30px;
   cursor: pointer;
   background: rgba(194, 194, 194, 0.705);
@@ -11946,7 +11940,7 @@ body {
   position: relative;
 }
 
-.loginlogin #btn {
+.ted #btn {
   top: 0;
   left: 0;
   position: absolute;
@@ -11958,7 +11952,7 @@ body {
   transition: 0.5s;
 }
 
-.loginlogin .input-group-login {
+.ted .input-group-login {
   top: 150px;
   position: absolute;
   width: 280px;
@@ -11966,7 +11960,7 @@ body {
   transition: 0.5s;
 }
 
-.loginlogin .input-group-register {
+.ted .input-group-register {
   top: 120px;
   position: absolute;
   width: 280px;
@@ -11974,7 +11968,7 @@ body {
   transition: 0.5s;
 }
 
-.loginlogin .input-field {
+.ted .input-field {
   width: 100%;
   padding: 10px 0;
   margin: 5px 0;
@@ -11986,7 +11980,7 @@ body {
   background: transparent;
 }
 
-.loginlogin .submit-btn {
+.ted .submit-btn {
   width: 85%;
   padding: 10px 30px;
   cursor: pointer;
@@ -11998,31 +11992,25 @@ body {
   border-radius: 30px;
 }
 
-.loginlogin .check-box {
-  margin: 30px 10px 34px 0;
-}
-
-.loginlogin span {
+.ted span {
   color: #777;
   font-size: 12px;
-  bottom: 68px;
-  position: absolute;
 }
 
-.loginlogin #login {
+.ted #login {
   left: 50px;
 }
 
-.loginlogin #login input {
+.ted #login input {
   color: black;
   font-size: 15;
 }
 
-.loginlogin #register {
+.ted #register {
   left: 450px;
 }
 
-.loginlogin #register input {
+.ted #register input {
   color: black;
   font-size: 15;
 }

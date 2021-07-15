@@ -74,7 +74,7 @@ export const Login = () => {
     //main render
     if (!token) {
         return (
-            <div className="loginlogin">
+            <div className="ted">
                 <div className="full-page">
                     <div className="navbar">
                         <div>
@@ -96,8 +96,16 @@ export const Login = () => {
                             <div className="loginBox">
                                 <div className='button-box'>
                                     <div id='btn'></div>
-                                    <button type='button' className='toggle-btn'>Log In</button>
-                                    <button type='button' className='toggle-btn'>Register</button>
+
+                                    <Link to='/login' style={{ textDecoration: 'none', color: 'black' }} >
+                                        <button type='button' className='toggle-btn'>Log In</button>
+                                    </Link>
+
+
+                                    <Link to='/registration' style={{ textDecoration: 'none', color: 'black' }}>
+                                        <button type='button' className='toggle-btn'>Register</button>
+                                    </Link>
+
                                 </div>
 
 
@@ -108,8 +116,8 @@ export const Login = () => {
                                     <button onClick={() => handleLogin()} className='submit-btn'>Log in</button>
                                 </div>
                             </div>
-
                         </div>
+                        
                     </div>
                 </div>
             </div>

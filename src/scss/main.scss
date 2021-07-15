@@ -376,7 +376,7 @@ body {
 
 //TED's LOGIN/Register
 
-.loginlogin {
+.ted {
   .full-page {
     height: 100%;
     width: 100%;
@@ -387,6 +387,7 @@ body {
   }
 
   .fontlogo:link {
+    text-decoration: none;
     font-size: 50px;
     color: rgb(255, 255, 255);
     font-family: "Lobster Two", cursive;
@@ -437,11 +438,11 @@ body {
   nav ul li a:hover {
     color: aqua;
   }
-  a {
-    text-decoration: none;
-    color: palevioletred;
-    font-size: 28px;
-  }
+  // a {
+  //   text-decoration: none;
+  //   color: palevioletred;
+  //   font-size: 28px;
+  // }
   /*
 #login-form
 {
@@ -449,13 +450,13 @@ body {
 }
 */
   .form-box .registerBox {
-    width: 380px;
-    height: 900px;
+    width: 500px;
+    height: 500px;
+    overflow-y: scroll;
     position: relative;
     margin: 2% auto;
     background: rgb(219, 219, 219);
     padding: 10px;
-    overflow: hidden;
   }
 
   .form-box .loginBox {
@@ -465,7 +466,6 @@ body {
     margin: 2% auto;
     background: rgb(219, 219, 219);
     padding: 10px;
-    overflow: hidden;
   }
   .button-box {
     width: fit-content;
@@ -527,14 +527,9 @@ body {
     outline: none;
     border-radius: 30px;
   }
-  .check-box {
-    margin: 30px 10px 34px 0;
-  }
   span {
     color: #777;
     font-size: 12px;
-    bottom: 68px;
-    position: absolute;
   }
   #login {
     left: 50px;
