@@ -74,25 +74,48 @@ export const Login = () => {
     //main render
     if (!token) {
         return (
-            <div>
-                <div>
-                    <center>
-                        <h3>Login</h3>
-                        <label htmlFor="email">Email: </label>
-                        <input type="text" id="email" ref={emailRef} />
+            <div className="loginlogin">
+                <div className="full-page">
+                    <div className="navbar">
+                        <div>
+                            <a className="fontlogo" href='website.html'>Intern-net</a>
+                        </div>
+                        <nav>
+                            <ul id='MenuItems'>
+                                <li><a href='/'>Home</a></li>
+                                <li><a href='/'>About Us</a></li>
+                                <li><a href='/'>Services</a></li>
+                                <li><a href='/'>Contact</a></li>
+                                <li><button className='loginbtn' style={{ width: 'auto' }}>Login</button></li>
+                            </ul>
+                        </nav>
+                    </div>
 
-                        <br />
-                        <label htmlFor="pass">Password: </label>
-                        <input type="password" id="pass" ref={passwordRef} />
+                    <div id='login-form' className='login-page'>
+                        <div className="form-box">
+                            <div className="loginBox">
+                                <div className='button-box'>
+                                    <div id='btn'></div>
+                                    <button type='button' className='toggle-btn'>Log In</button>
+                                    <button type='button' className='toggle-btn'>Register</button>
+                                </div>
 
-                        <br />
-                        <button onClick={() => handleLogin()}>Login</button>
 
-                        <br />
-                        <Link to='/registration' >Back to Registration</Link>
-                    </center>
+                                <div id='login' className='input-group-login'>
+                                    <input type='text' className='input-field' placeholder='Email Id' ref={emailRef} />
+                                    <input type='password' className='input-field' placeholder='Enter Password' ref={passwordRef} />
+                                    <input type='checkbox' className='check-box' /><span>Remember Password</span>
+                                    <button onClick={() => handleLogin()} className='submit-btn'>Log in</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
         )
     } else {
         return (

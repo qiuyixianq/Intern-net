@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { gsap } from 'gsap';
 import { Company } from './company/Company';
 import { SearchBar } from './searchBar/SearchBar';
 import { NavBar } from './navbar/NavBar';
