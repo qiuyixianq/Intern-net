@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+const axios = require('axios').default;
 
 //for body.req to backend
 const reqUserObject = {
@@ -26,14 +27,24 @@ export const Registration = () => {
     }
 
     //onSubmit
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
         if(registerObj.password !== registerObj.confirmPassword) alert('Unmatch password and confirm password');
         else {
-            console.log(registerObj);
-            setRegisterObj(reqUserObject);
+            //API call to backend register
+            const res = await axios.post('http://localhost:4000/register', { user: registerObj });
+            const status = res.data;
+            if(status.registrationSuccess){
+                alert('Registration Success');
+                //clear form
+                setRegisterObj(reqUserObject);
+            }
+            else alert('Registration Failed\nEmail already registered');
+            
         }
     }
+
+
 
     //main render
     return (

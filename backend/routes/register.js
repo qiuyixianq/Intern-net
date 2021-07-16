@@ -9,6 +9,8 @@ const User = require('../Models/user_model');
 router.post('/', async (req, res) => {
     //register
     const { user } = req.body;
+    console.log('/register\n');
+    console.log(user);
 
     try {
         const result = await User.find({ 'email': user.email });
