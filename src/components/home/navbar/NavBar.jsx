@@ -2,12 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { clearUser } from '../../authentication/tokenSlice';
+import { clearSelectedCompany } from '../company/companyDetail/companyDetailSlice';
+import { clearSearch } from '../searchBar/searchBarSlice';
 
 export const NavBar = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     //event func
     const handleLogout = () => {
+        //could just use combineReducer as top level reducer in store and reset everything with single dispatch
+        dispatch(clearSelectedCompany());
+        dispatch(clearSearch());
         dispatch(clearUser());
         sessionStorage.clear();
     }

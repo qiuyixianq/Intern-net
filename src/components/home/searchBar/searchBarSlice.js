@@ -27,8 +27,12 @@ const searchBarSlice = createSlice({
         updateAdvanceSearch: (state,action) => {
             state.advanceSearchObject = action.payload;
         },
+
+        clearSearch: state => {
+            return initialState;
+        }
     }
 });
 
-export const { updateSearch, toggleIsAdvanceSearch, updateAdvanceSearch } = searchBarSlice.actions;
+export const { updateSearch, toggleIsAdvanceSearch, updateAdvanceSearch, clearSearch } = searchBarSlice.actions;
 export default searchBarSlice.reducer;
