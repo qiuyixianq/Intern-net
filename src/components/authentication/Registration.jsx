@@ -1,32 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+//for body.req to backend
+const reqUserObject = {
+    email: '',
+    password: '',
+    confirmPassword: '',
+    firstName: '',
+    surName: '',
+    mobile: '',
+    location: '',
+    birthday: '',
+    gender: 'Male',
+    profession: '',
+}
 
 export const Registration = () => {
+    const [ registerObj, setRegisterObj ] = useState(reqUserObject);
+
+    //event func
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setRegisterObj({...registerObj, [name] : value});
+        
+    }
+
+    //onSubmit
+    const handleSubmit = e => {
+        e.preventDefault()
+        if(registerObj.password !== registerObj.confirmPassword) alert('Unmatch password and confirm password');
+        else {
+            console.log(registerObj);
+            setRegisterObj(reqUserObject);
+        }
+    }
+
+    //main render
     return (
-        // <div>
-        //     <center><h3>Registration Page</h3>
-        //         <div>
-        //             <label htmlFor="name">Full Name: </label>
-        //             <input type="text" id="name" />
-
-        //             <br />
-        //             <label htmlFor="university">University: </label>
-        //             <input type="text" id="university" />
-
-        //             <br />
-        //             <label htmlFor="username">Username: </label>
-        //             <input type="text" id="username" />
-
-        //             <br />
-        //             <label htmlFor="pass">Password: </label>
-        //             <input type="password" id="pass"/>
-        //         </div>
-        //         <h6>
-        //             <Link to="/login" >Go to login</Link>
-        //         </h6>
-        //     </center>
-        // </div>
 
         <div className="ted">
             <div className="full-page">
@@ -45,7 +55,7 @@ export const Registration = () => {
                     </nav>
                 </div>
 
-                <form id='login-form' className='login-page' onSubmit={() => alert('sia')}>
+                <form id='login-form' className='login-page' onSubmit={ e => handleSubmit(e)} action="" >
                     <div className="form-box">
                         <div className="registerBox">
                             <div className='button-box'>
@@ -60,14 +70,14 @@ export const Registration = () => {
                             </div>
 
                             <div id='register' data-toggle="buttons">
-                                <input type='text' className='input-field' placeholder='First Name' required />
-                                <input type='text' className='input-field' placeholder='Last Name ' required />
-                                <input type='tel' className='input-field' placeholder='Phone Number (eg: 010-123xxxx)' pattern="[0-9]{3}-[0-9]{7}" required />
-                                <input type='text' className='input-field' placeholder='Location (eg: Kuala Lumpur, Malaysia)' required />
-                                <input type='email' className='input-field' placeholder='Email Address' required />
-                                <input type='password' className='input-field' placeholder='Enter Password' required />
-                                <input type='password' className='input-field' placeholder='Confirm Password' required />
-                                <select className="input-field" required>
+                                <input type='text' name="firstName" value={registerObj.firstName} className='input-field' placeholder='First Name' onChange={ e => handleChange(e)} required />
+                                <input type='text' name="surName" value={registerObj.surName} className='input-field' placeholder='Last Name ' onChange={ e => handleChange(e)} required />
+                                <input type='tel' name="mobile" value={registerObj.mobile} className='input-field' placeholder='Phone Number (eg: 010-123xxxx)' pattern="[0-9]{3}-[0-9]{7}" onChange={ e => handleChange(e)} required />
+                                <input type='text' name="location" value={registerObj.location} className='input-field' placeholder='Location (eg: Kuala Lumpur, Malaysia)' onChange={ e => handleChange(e)} required />
+                                <input type='email' name="email" value={registerObj.email} className='input-field' placeholder='Email Address' onChange={ e => handleChange(e)} required />
+                                <input type='password' name="password" value={registerObj.password} className='input-field' placeholder='Enter Password' onChange={ e => handleChange(e)} required />
+                                <input type='password' name="confirmPassword" value={registerObj.confirmPassword} className='input-field' placeholder='Confirm Password' onChange={ e => handleChange(e)} required />
+                                <select className="input-field" name="profession" value={registerObj.profession} onChange={ e => handleChange(e)} required>
                                     <option value="">Select Education Course:</option>
                                     <option value="Business">Business</option>
                                     <option value="Built Environment">Built Environment</option>
@@ -83,11 +93,11 @@ export const Registration = () => {
                                     <option value="Others">Others...</option>
                                 </select>
 
-                                <label htmlFor="birthday" className="mt-2">Date of Brith</label>
-                                <input type="date" className="input-field" id="birthday" placeholder="Date of Birth" />
-                                <select name="gender" id="gender">
+                                <label htmlFor="birthday" className="mt-2">Date of Birth</label>
+                                <input type="date" name="birthday" value={registerObj.birthday} className="input-field" id="birthday" placeholder="Date of Birth" onChange={ e => handleChange(e)} />
+                                <select name="gender" id="gender" value={registerObj.gender} onChange={ e => handleChange(e)} >
                                     <option value="Male">Male</option>
-                                    <option value="Female">FeMale</option>
+                                    <option value="Female">Female</option>
                                     <option value="Others">Others</option>
                                 </select>
                                 <br></br>
