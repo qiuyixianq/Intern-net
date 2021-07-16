@@ -51,7 +51,6 @@ export const Login = () => {
                 const res = await axios.post('http://localhost:4000/login', { user });
                 //invalid 
                 if (!res.data) {
-                    console.log('invalid');
                     alert('Invalid username or password');
                 }
 
@@ -86,7 +85,6 @@ export const Login = () => {
                                 <li><a href='/'>About Us</a></li>
                                 <li><a href='/'>Services</a></li>
                                 <li><a href='/'>Contact</a></li>
-                                <li><button className='loginbtn' style={{ width: 'auto' }}>Login</button></li>
                             </ul>
                         </nav>
                     </div>
@@ -98,7 +96,7 @@ export const Login = () => {
                                     <div id='btn'></div>
 
                                     <Link to='/login' style={{ textDecoration: 'none', color: 'black' }} >
-                                        <button type='button' className='toggle-btn'>Log In</button>
+                                        <button type='button' className='toggle-btn activex'>Log In</button>
                                     </Link>
 
 
@@ -112,12 +110,15 @@ export const Login = () => {
                                 <div id='login' className='input-group-login'>
                                     <input type='text' className='input-field' placeholder='Email Id' ref={emailRef} />
                                     <input type='password' className='input-field' placeholder='Enter Password' ref={passwordRef} />
-                                    <input type='checkbox' className='check-box' /><span>Remember Password</span>
+                                    <div className="d-flex align-items-center mb-5">
+                                        <input type='checkbox' className='check-box me-1' />
+                                        <span>Remember Password</span>
+                                    </div>
                                     <button onClick={() => handleLogin()} className='submit-btn'>Log in</button>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
