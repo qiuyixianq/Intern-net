@@ -101,7 +101,7 @@ export const Login = () => {
 
 
                                     <Link to='/registration' style={{ textDecoration: 'none', color: 'black' }}>
-                                        <button type='button' className='toggle-btn'>Register</button>
+                                        <button type='button' className='toggle-btn'>Sign Up</button>
                                     </Link>
 
                                 </div>
