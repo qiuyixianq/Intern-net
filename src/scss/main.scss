@@ -454,13 +454,20 @@ body {
 }
 */
   .form-box .registerBox {
-    width: 500px;
+    width: 650px;
     height: 500px;
     overflow-y: scroll;
     position: relative;
     margin: 2% auto;
     background: rgb(219, 219, 219);
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    .personalInfo, .loginInfo {
+      background-color: rgba(255,255,255,0.5);
+      border-radius: 20px;
+      padding: 15px;
+    }
   }
 
   .form-box .loginBox {
@@ -470,7 +477,9 @@ body {
     margin: 2% auto;
     background: rgb(219, 219, 219);
     padding: 10px;
+    border-radius: 10px;
   }
+
   .button-box {
     width: fit-content;
     margin: 35px auto;
@@ -537,6 +546,9 @@ body {
     border: 0;
     outline: none;
     border-radius: 30px;
+  }
+  .submit-btn:hover {
+    background: #af8a60;
   }
   span {
     color: #777;

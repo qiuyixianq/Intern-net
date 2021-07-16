@@ -75,57 +75,62 @@ export const Registration = () => {
                                 </Link>
 
                                 <Link to='/registration' style={{ textDecoration: 'none', color: 'black' }}>
-                                    <button type='button' className='toggle-btn activex'>Register</button>
+                                    <button type='button' className='toggle-btn activex'>Sign Up</button>
                                 </Link>
                             </div>
 
                             <div id='register' data-toggle="buttons">
-                                <h6>Personal Info</h6>
-                                <input type='text' name="firstName" value={registerObj.firstName} className='input-field' placeholder='First Name' onChange={e => handleChange(e)} required />
-                                <input type='text' name="surName" value={registerObj.surName} className='input-field' placeholder='Last Name ' onChange={e => handleChange(e)} required />
-                                <input type='tel' name="mobile" value={registerObj.mobile} className='input-field' placeholder='Phone Number (eg: 010-123xxxx)' pattern="[0-9]{3}-[0-9]{7}" onChange={e => handleChange(e)} required />
-                                <input type='text' name="location" value={registerObj.location} className='input-field' placeholder='Location (eg: Kuala Lumpur, Malaysia)' onChange={e => handleChange(e)} required />
-                                <select name="gender" id="gender" value={registerObj.gender} onChange={e => handleChange(e)} className="input-field" >
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Others">Others</option>
-                                </select>
-                                <select className="input-field" name="profession" value={registerObj.profession} onChange={e => handleChange(e)} required>
-                                    <option value="">Select Education Course:</option>
-                                    <option value="Business">Business</option>
-                                    <option value="Built Environment">Built Environment</option>
-                                    <option value="Communication & Creative">Communication & Creative</option>
-                                    <option value="Computing Creative Media">Computing Creative Media</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Hospitality, Tourism & Culinary Arts">Hospitality, Tourism & Culinary Arts</option>
-                                    <option value="Health Science">Health Science</option>
-                                    <option value="Law">Law</option>
-                                    <option value="Professional Accountancy">Professional Accountancy</option>
-                                    <option value="Social Science">Social Science</option>
-                                    <option value="Language">Language</option>
-                                    <option value="Others">Others...</option>
-                                </select>
+                                <div className="personalInfo">
+                                    <h6>Personal Info</h6>
+                                    <input type='text' name="firstName" value={registerObj.firstName} className='input-field' placeholder='First Name' onChange={e => handleChange(e)} required />
+                                    <input type='text' name="surName" value={registerObj.surName} className='input-field' placeholder='Last Name ' onChange={e => handleChange(e)} required />
+                                    <input type='tel' name="mobile" value={registerObj.mobile} className='input-field' placeholder='Phone Number (eg: 010-123xxxx)' pattern="[0-9]{3}-[0-9]{7}" onChange={e => handleChange(e)} required />
+                                    <input type='text' name="location" value={registerObj.location} className='input-field' placeholder='Location (eg: Kuala Lumpur, Malaysia)' onChange={e => handleChange(e)} required />
+                                    <select name="gender" id="gender" value={registerObj.gender} onChange={e => handleChange(e)} className="input-field" >
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <select className="input-field" name="profession" value={registerObj.profession} onChange={e => handleChange(e)} required>
+                                        <option value="">Select Education Course:</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Built Environment">Built Environment</option>
+                                        <option value="Communication & Creative">Communication & Creative</option>
+                                        <option value="Computing Creative Media">Computing</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Hospitality, Tourism & Culinary Arts">Hospitality, Tourism & Culinary Arts</option>
+                                        <option value="Health Science">Health Science</option>
+                                        <option value="Law">Law</option>
+                                        <option value="Professional Accountancy">Professional Accountancy</option>
+                                        <option value="Social Science">Social Science</option>
+                                        <option value="Language">Language</option>
+                                        <option value="Others">Others...</option>
+                                    </select>
 
-                                <label htmlFor="birthday" className="mt-2">Date of Birth</label>
-                                <input type="date" name="birthday" value={registerObj.birthday}
-                                    className="input-field"
-                                    id="birthday"
-                                    placeholder="Date of Birth"
-                                    onChange={e => handleChange(e)} />
+                                    <label htmlFor="birthday" className="mt-2">Date of Birth</label>
+                                    <input type="date" name="birthday" value={registerObj.birthday}
+                                        className="input-field"
+                                        id="birthday"
+                                        placeholder="Date of Birth"
+                                        onChange={e => handleChange(e)} />
+                                </div>
 
 
-                                <h6 className="mt-4">Login Info</h6>
-                                <input type='email' name="email" value={registerObj.email} className='input-field' placeholder='Email Address' onChange={e => handleChange(e)} required />
-                                <input type='password' name="password" value={registerObj.password} className='input-field' placeholder='Enter Password' onChange={e => handleChange(e)} required />
-                                <input type='password' name="confirmPassword" value={registerObj.confirmPassword} className='input-field' placeholder='Confirm Password' onChange={e => handleChange(e)} required />
+
+                                <div className="loginInfo mt-4">
+                                    <h6>Login Info</h6>
+                                    <input type='email' name="email" value={registerObj.email} className='input-field' placeholder='Email Address' onChange={e => handleChange(e)} required />
+                                    <input type='password' name="password" value={registerObj.password} className='input-field' placeholder='Enter Password' onChange={e => handleChange(e)} required />
+                                    <input type='password' name="confirmPassword" value={registerObj.confirmPassword} className='input-field' placeholder='Confirm Password' onChange={e => handleChange(e)} required />
+                                </div>
 
 
                                 <br></br>
-                                <div className="d-flex mt-3 mb-3 align-items-center">
+                                <div className="d-flex mt-3 mb-5 align-items-center">
                                     <input type='checkbox' className='me-2' required />
                                     <span>I agree to the terms and conditions</span>
                                 </div>
-                                <button type='submit' className='submit-btn'>Register</button>
+                                <button type='submit' className='submit-btn'>Sign Up</button>
                             </div>
 
                         </div>

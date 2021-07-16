@@ -11905,13 +11905,20 @@ body {
 }
 
 .ted .form-box .registerBox {
-  width: 500px;
+  width: 650px;
   height: 500px;
   overflow-y: scroll;
   position: relative;
   margin: 2% auto;
   background: #dbdbdb;
-  padding: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.ted .form-box .registerBox .personalInfo, .ted .form-box .registerBox .loginInfo {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 15px;
 }
 
 .ted .form-box .loginBox {
@@ -11921,6 +11928,7 @@ body {
   margin: 2% auto;
   background: #dbdbdb;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .ted .button-box {
@@ -11999,6 +12007,10 @@ body {
   border: 0;
   outline: none;
   border-radius: 30px;
+}
+
+.ted .submit-btn:hover {
+  background: #af8a60;
 }
 
 .ted span {
