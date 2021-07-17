@@ -17,8 +17,8 @@ const companyDetailSlice = createSlice({
             state.showDetail = action.payload;
         },
 
-        clearSelectedCompany: (state) => {
-            return initialState;
+        clearSelectedCompany: state => {
+            return state = initialState;
         }
     }
 });

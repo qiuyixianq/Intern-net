@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleIsAdvanceSearch, updateSearch, updateAdvanceSearch } from './searchBarSlice';
+import { clearSelectedCompany } from '../company/companyDetail/companyDetailSlice';
 import { gsap } from 'gsap';
 
 export const SearchBar = () => {
@@ -44,12 +45,14 @@ export const SearchBar = () => {
         dispatch(updateAdvanceSearch(searchObject));
     }
 
+    //for 'Reset'
     const clearBoxes = () => {
         nameRef.current.value = '';
         industryRef.current.value = '';
         locationRef.current.value = '';
         jobTitleRef.current.value = '';
         dispatch(updateAdvanceSearch({}));
+        dispatch(clearSelectedCompany());
     }
 
     //render utility

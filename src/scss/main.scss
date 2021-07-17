@@ -114,9 +114,6 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
   padding: 15px;
-  //background-color: #9b61a6;
-  //background-color: #9E15BF;
-  color: black;
   height: fit-content;
 }
 .pocketProfile::before {
@@ -416,10 +413,13 @@ body {
   nav ul {
     display: inline-block;
     list-style: none;
+    height: fit-content;
+    margin: auto;
   }
   nav ul li {
     display: inline-block;
-    margin-right: 70px;
+    margin-right: 50px;
+    
   }
   nav ul li a {
     text-decoration: none;

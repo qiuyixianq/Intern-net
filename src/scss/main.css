@@ -11534,7 +11534,6 @@ body {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   padding: 15px;
-  color: black;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -11872,11 +11871,15 @@ body {
 .ted nav ul {
   display: inline-block;
   list-style: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
 }
 
 .ted nav ul li {
   display: inline-block;
-  margin-right: 70px;
+  margin-right: 50px;
 }
 
 .ted nav ul li a {
