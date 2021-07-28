@@ -41,14 +41,16 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { name, website, size, type, industry, location, job, imgsrc } = req.body;
+    const { name, website, sizeFrom, sizeTo, type, industry, location, job, imgsrc } = req.body;
+
+    const formatString = str => str[0].toUpperCase() + str.substring(1);
     const newCompany = new Company({
-        companyName: name,
+        companyName: formatString(name),
         companyWebsite: website,
-        companySize: size,
-        companyType: type,
-        companyIndustry: industry,
-        companyLocation: location,
+        companySize: `${sizeFrom} to ${sizeTo} Employee`,
+        companyType: formatString(type),
+        companyIndustry: formatString(industry),
+        companyLocation: formatString(location),
         companyJob: job,
         logo: imgsrc
     });
