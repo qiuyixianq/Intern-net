@@ -339,6 +339,30 @@ body {
   }
 }
 
+//Aministration
+.addCompanyForm {
+  background-color: #f7d7b29c;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: left;
+  width: 50%;
+
+  .basicInformation {
+    padding: 15px;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .jobSection {
+    padding: 15px;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 //end CompanyJSX
 
 //Footer
