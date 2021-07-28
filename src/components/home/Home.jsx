@@ -69,7 +69,7 @@ export const Home = () => {
         <Redirect to='/login' />
     )
     //admin layout
-    else if (user.email === 'internnet@gmail.com'){
+    else if (user.email === 'internnet@gmail.com') {
         return (
             <div className="mainContent">
                 <NavBar />
@@ -81,18 +81,20 @@ export const Home = () => {
     else {
         return (
             <React.Fragment>
-                <div className="mainContent">
-                    <NavBar />
+                <div className="yx">
+                    <div className="mainContent">
+                        <NavBar />
 
-                    <div className="container-fluid mt-4">
-                        <div className="row justify-content-between">
-                            <div className="col col-lg-7">
-                                <SearchBar />
+                        <div className="container-fluid mt-4">
+                            <div className="row justify-content-between">
+                                <div className="col col-lg-7">
+                                    <SearchBar />
+                                </div>
+                                {renderPocketProfile()}
                             </div>
-                            {renderPocketProfile()}
                         </div>
+                        <Company />
                     </div>
-                    <Company />
                 </div>
                 <Footer />
             </React.Fragment>
