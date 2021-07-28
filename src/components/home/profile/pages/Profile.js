@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ProfImg from "../assets/images/prof_test.jpeg";
 import "./ProfileTemp.css";
 
 const Profile = () => {
+  const { user } = useSelector(state => state.authentication);
+  
   return (
     <>
       <div className="container">
@@ -14,22 +17,22 @@ const Profile = () => {
                   <img src={ProfImg} alt="" />
                 </div>
                 <div className="profile_name">
-                  <div className="name">Hua Jian, Chan</div>
-                  <div className="title">Software Engineering Lead</div>
+                  <div className="name">{`${user.firstName}, ${user.surName}`}</div>
+                  <div className="title">{user.profession}</div>
                 </div>
                 <div className="profile_info">
                   <ul className="profile_timeline">
                     <li className="d-flex align-items-center flex-wrap">
-                      <i class="bx bxs-phone prof_icons"></i>
-                      <div>(+60) 12-345 6789</div>
+                      <i className="bx bxs-phone prof_icons"></i>
+                      <div>{user.mobile}</div>
                     </li>
                     <li className="d-flex align-items-center flex-wrap">
                       <i className="bx bx-envelope prof_icons"></i>
-                      <div>huajian@gmail.com</div>
+                      <div>{user.email}</div>
                     </li>
                     <li className="d-flex align-items-center flex-wrap">
                       <i className="bx bxl-linkedin-square prof_icons"></i>
-                      <div>Chan Hua Jian</div>
+                      <div>{user.firstName}</div>
                     </li>
                   </ul>
                   <br />
@@ -46,7 +49,7 @@ const Profile = () => {
                       <h6 className="mb-0">Full Name</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      Hua Jian, Chan
+                      {`${user.surName} ${user.firstName}`}
                     </div>
                   </div>
                   <hr />
@@ -97,7 +100,7 @@ const Profile = () => {
                       Address
                     </label>
                     <div className="col-sm-9 ">
-                      Petaling Jaya, Selangor, Malaysia
+                      {user.location}
                     </div>
                     <label className="col-sm-3 date-label text-secondary">
                       Nationality
