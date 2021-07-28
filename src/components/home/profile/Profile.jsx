@@ -12,7 +12,7 @@ import Experience from "./pages/Experience";
 
 export const MainProfile = () => {
     return (
-        // <Router>
+        <Router>
         <React.Fragment>
             <Sidebar />
             {/* <Profile /> */}
@@ -26,6 +26,6 @@ export const MainProfile = () => {
                 <Route path="/support" exact component={Support} />
             </Switch>
         </React.Fragment>
-        // </Router>
+        </Router>
     );
 }
