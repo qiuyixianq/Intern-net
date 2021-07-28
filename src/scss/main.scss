@@ -64,306 +64,307 @@ body {
   background-color: white;
 }
 
-.mainContent {
-  padding: 0px 20px 20px 20px;
+.yx {
+  .mainContent {
+    padding: 0px 20px 20px 20px;
 
-  .appName {
-    font-family: "Lobster Two", cursive;
-    color: black;
-  }
+    .appName {
+      font-family: "Lobster Two", cursive;
+      color: black;
+    }
 
-  .navActive {
-    position: relative;
-  }
-
-  .navActive::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    left: 0;
-    bottom: 0;
-    background-color: blue;
-  }
-
-  @include medium {
-    width: 75%;
-    margin: auto;
-  }
-
-  @include large {
-    width: 99%;
-  }
-
-  @include superLarge {
-    width: 85%;
-  }
-}
-
-//SearchBarJSX
-.searchBarJSX {
-  input {
-    border-radius: 20px;
-  }
-}
-
-//PocketProfile
-.pocketProfile {
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
-  padding: 15px;
-  height: fit-content;
-}
-.pocketProfile::before {
-  content: "Profile";
-  font-family: "Montserrat", sans-serif;
-  position: absolute;
-  top: -15px;
-  right: 20px;
-  font-weight: bold;
-  font-size: 1.3rem;
-  background: #4ac6d2;
-  background: #9e15bf;
-  color: white;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
-  padding: 0px 15px;
-  border-radius: 20px;
-}
-
-.pocketProfile::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease-in-out;
-}
-
-.pocketProfile:hover::after {
-  opacity: 1;
-}
-
-//CompanyJSX
-.cardOuterContainer {
-  position: relative;
-
-  //company cardss
-  .cardInnerContainer {
-    .card {
+    .navActive {
       position: relative;
-      background-color: #fff5eb;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease-in-out;
-      opacity: 0;
-      border-radius: 10px;
-
-      .card-header {
-        color: white;
-        //background-color: #00adb5;
-        background-color: #4ac6d2;
-
-        .companyLogo {
-          border-radius: 10px;
-        }
-      }
     }
 
-    @include extraLarge {
-      //width: 40%;
-      flex-grow: 1;
+    .navActive::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      background-color: blue;
     }
-  }
 
-  //Details
-  .companyDetail {
-    position: absolute;
-    z-index: 2;
-    background-color: rgb(34, 34, 34);
-    color: white;
-    width: 100%;
-    height: 96vh;
-    border-radius: 20px;
-    padding: 20px;
-    left: 0%;
-    top: -1%;
-    overflow-y: scroll;
-    overscroll-behavior-y: contain;
+    @include medium {
+      width: 75%;
+      margin: auto;
+    }
 
     @include large {
-      position: relative;
-      width: 65%;
-      min-height: 96vh;
-      height: max-content;
-      padding: 20px 50px;
-      left: 1%;
-      opacity: 1;
+      width: 99%;
     }
 
     @include superLarge {
-      padding: 20px 100px;
-    }
-
-    .divider {
-      background-color: rgba(136, 136, 136, 0.11);
-    }
-
-    //mobile only
-    .btnCloseContainer {
-      text-align: right;
-    }
-
-    .companyLogo {
-      border-radius: 15px;
-    }
-
-    .jobCardContainer {
-      padding: 5px;
-
-      .jobCard {
-        border-radius: 10px;
-        background-color: white;
-        color: black;
-        padding: 8px;
-        margin-bottom: 1em;
-
-        @include large {
-          margin-bottom: 2em;
-        }
-
-        .favButton:hover {
-          transform: scale(1.1, 1.1);
-        }
-
-        .favButton:active {
-          transform: scale((0.9, 0.9));
-        }
-      }
-    }
-
-    .commentBox {
-      max-height: 200px;
-      overflow-y: scroll;
-    }
-
-    .commentInput {
-      width: 80%;
-      max-height: 200px;
-
-      @include small {
-        width: 90%;
-      }
-    }
-
-    .sendComment {
-      position: relative;
-      width: 20%;
-      border-radius: 0px 10px 10px 0px;
-
-      @include small {
-        width: 10%;
-      }
+      width: 85%;
     }
   }
 
-  .companyDetail::-webkit-scrollbar {
-    display: none;
+  //SearchBarJSX
+  .searchBarJSX {
+    input {
+      border-radius: 20px;
+    }
   }
-  //CompanyDetail END
 
-  @include large {
-    display: flex;
-    justify-content: space-around;
+  //PocketProfile
+  .pocketProfile {
+    border-radius: 20px;
     position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    padding: 15px;
+    height: fit-content;
   }
-}
-//cardOuterContainer END
+  .pocketProfile::before {
+    content: "Profile";
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    background: #4ac6d2;
+    background: #9e15bf;
+    color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+    padding: 0px 15px;
+    border-radius: 20px;
+  }
 
-.card:hover {
-  cursor: pointer;
-  transform: scale(1.02, 1.02);
-}
-/* Create the hidden pseudo-element */
-/* include the shadow for the end state */
+  .pocketProfile::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out;
+  }
 
-.card::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s ease-in-out;
-}
+  .pocketProfile:hover::after {
+    opacity: 1;
+  }
 
-/* Fade in the pseudo-element with the bigger shadow */
-.card:hover::after {
-  opacity: 1;
-}
+  //CompanyJSX
+  .cardOuterContainer {
+    position: relative;
 
-//pagination
-.companyPageBox {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 10px;
+    //company cardss
+    .cardInnerContainer {
+      .card {
+        position: relative;
+        background-color: #fff5eb;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        border-radius: 10px;
 
-  a {
-    color: black;
-    text-decoration: none;
+        .card-header {
+          color: white;
+          //background-color: #00adb5;
+          background-color: #4ac6d2;
 
-    margin: 0px 5px;
+          .companyLogo {
+            border-radius: 10px;
+          }
+        }
+      }
+
+      @include extraLarge {
+        //width: 40%;
+        flex-grow: 1;
+      }
+    }
+
+    //Details
+    .companyDetail {
+      position: absolute;
+      z-index: 2;
+      background-color: rgb(34, 34, 34);
+      color: white;
+      width: 100%;
+      height: 96vh;
+      border-radius: 20px;
+      padding: 20px;
+      left: 0%;
+      top: -1%;
+      overflow-y: scroll;
+      overscroll-behavior-y: contain;
+
+      @include large {
+        position: relative;
+        width: 65%;
+        min-height: 96vh;
+        height: max-content;
+        padding: 20px 50px;
+        left: 1%;
+        opacity: 1;
+      }
+
+      @include superLarge {
+        padding: 20px 100px;
+      }
+
+      .divider {
+        background-color: rgba(136, 136, 136, 0.11);
+      }
+
+      //mobile only
+      .btnCloseContainer {
+        text-align: right;
+      }
+
+      .companyLogo {
+        border-radius: 15px;
+      }
+
+      .jobCardContainer {
+        padding: 5px;
+
+        .jobCard {
+          border-radius: 10px;
+          background-color: white;
+          color: black;
+          padding: 8px;
+          margin-bottom: 1em;
+
+          @include large {
+            margin-bottom: 2em;
+          }
+
+          .favButton:hover {
+            transform: scale(1.1, 1.1);
+          }
+
+          .favButton:active {
+            transform: scale((0.9, 0.9));
+          }
+        }
+      }
+
+      .commentBox {
+        max-height: 200px;
+        overflow-y: scroll;
+      }
+
+      .commentInput {
+        width: 80%;
+        max-height: 200px;
+
+        @include small {
+          width: 90%;
+        }
+      }
+
+      .sendComment {
+        position: relative;
+        width: 20%;
+        border-radius: 0px 10px 10px 0px;
+
+        @include small {
+          width: 10%;
+        }
+      }
+    }
+
+    .companyDetail::-webkit-scrollbar {
+      display: none;
+    }
+    //CompanyDetail END
+
+    @include large {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+    }
+  }
+  //cardOuterContainer END
+
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.02, 1.02);
+  }
+  /* Create the hidden pseudo-element */
+  /* include the shadow for the end state */
+
+  .card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Fade in the pseudo-element with the bigger shadow */
+  .card:hover::after {
+    opacity: 1;
+  }
+
+  //pagination
+  .companyPageBox {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
     padding: 10px;
-    border-radius: 10px;
-  }
-  a:hover {
-    background-color: $yellow-400;
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      margin: 0px 5px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    a:hover {
+      background-color: $yellow-400;
+    }
+
+    .activePageBtn a {
+      background-color: $yellow-400;
+    }
+
+    .disablePageBtn a {
+      background-color: $gray-200;
+      cursor: default;
+    }
   }
 
-  .activePageBtn a {
-    background-color: $yellow-400;
-  }
-
-  .disablePageBtn a {
-    background-color: $gray-200;
-    cursor: default;
-  }
-}
-
-//Aministration
-.addCompanyForm {
-  background-color: #f7d7b29c;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: left;
-  width: 50%;
-
-  .basicInformation {
-    padding: 15px;
-    background-color: rgba(128, 128, 128, 0.1);
+  //Aministration
+  .addCompanyForm {
+    background-color: #f7d7b29c;
+    padding: 20px;
     border-radius: 20px;
-    margin-bottom: 10px;
-  }
+    text-align: left;
+    width: 50%;
 
-  .jobSection {
-    padding: 15px;
-    background-color: rgba(128, 128, 128, 0.1);
-    border-radius: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    .basicInformation {
+      padding: 15px;
+      background-color: rgba(128, 128, 128, 0.1);
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .jobSection {
+      padding: 15px;
+      background-color: rgba(128, 128, 128, 0.1);
+      border-radius: 20px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   }
+  //end CompanyJSX
 }
-
-//end CompanyJSX
 
 //Footer
 .footer {
@@ -401,7 +402,7 @@ body {
   .full-page {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/src/cssPublic/login/0.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/cssPublic/login/0.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -443,7 +444,6 @@ body {
   nav ul li {
     display: inline-block;
     margin-right: 50px;
-    
   }
   nav ul li a {
     text-decoration: none;
@@ -487,8 +487,9 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
 
-    .personalInfo, .loginInfo {
-      background-color: rgba(255,255,255,0.5);
+    .personalInfo,
+    .loginInfo {
+      background-color: rgba(255, 255, 255, 0.5);
       border-radius: 20px;
       padding: 15px;
     }
@@ -594,6 +595,4 @@ body {
   }
 }
 
-
 //END TED (LOGIN/REGISTER)-------------------------------------->
-

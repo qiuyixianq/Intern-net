@@ -4,7 +4,7 @@ import { Registration } from './components/authentication/Registration';
 import { Home } from './components/home/Home';
 import { Login } from './components/authentication/Login';
 import { LandingPage } from './components/landingPage/LandingPage';
-import { Profile } from './components/home/profile/Profile';
+import { MainProfile } from './components/home/profile/Profile';
 
 function App() {
   return (
@@ -29,8 +29,8 @@ function App() {
             <Home />
           </Route>
 
-          <Route path='/profile' exact >
-            <Profile />
+          <Route path='/profile' >
+            <MainProfile />
           </Route>
 
         </Switch>
