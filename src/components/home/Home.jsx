@@ -5,7 +5,7 @@ import { Company } from './company/Company';
 import { SearchBar } from './searchBar/SearchBar';
 import { NavBar } from './navbar/NavBar';
 import { Footer } from './footer/Footer';
-
+import { AddCompany } from './admin/AddCompany';
 
 export const Home = () => {
     const { token, user } = useSelector(state => state.authentication);
@@ -68,7 +68,16 @@ export const Home = () => {
     if (!token) return (
         <Redirect to='/login' />
     )
-    //logged in
+    //admin layout
+    else if (user.email === 'internnet@gmail.com'){
+        return (
+            <div className="mainContent">
+                <NavBar />
+                <AddCompany />
+            </div>
+        )
+    }
+    //user layout
     else {
         return (
             <React.Fragment>
