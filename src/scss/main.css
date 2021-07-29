@@ -12065,4 +12065,627 @@ body {
   color: black;
   font-size: 15;
 }
+
+.whit {
+  /*full background*/
+  /*lobster two font style*/
+  /*Back to top button*/
+  /*hover effect forback to top button*/
+  /*Header section css start*/
+  /*background for the header section*/
+  /*gradient text for logo title(Intern-Net)*/
+  /*animation for logo's title*/
+  /*navbar*/
+  /*navbar logo's title style(Intern-Net)*/
+  /*nav bar style*/
+  /*log in button*/
+  /*log in button before hover*/
+  /*log in button hover*/
+  /*remove any designs*/
+  /*Header section css end*/
+  /*Testimonial css start*/
+  /*Testimonial section css end*/
+  /*----------------------------------------------------------------------------------------------------------*/
+  /*Companies section css end*/
+  /*Social team section css start*/
+  /*Heading padding for TESTIMONIAL*/
+  /*name block before hower*/
+  /*Name block style*/
+  /*hower bg*/
+  /*hower bg*/
+  /*social media icon*/
+  /*Our team section css end*/
+  /*-------------------------------------------------------------------------------------------------------------------------*/
+  /*Featured companies css start*/
+  /*company section with bg*/
+  /*padding for heading FEATURED COMPANY*/
+}
+
+.whit .unify-heading {
+  font-size: 80px;
+  font-weight: 200 !important;
+  letter-spacing: 4px;
+  font-family: "Calibri";
+  color: white;
+  text-align: left;
+}
+
+.whit .full-background {
+  background-color: #0e0725;
+}
+
+.whit .logo_text {
+  font-family: Lobster Two;
+  font-size: 100;
+}
+
+.whit #btn-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 15px;
+  background-color: transparent;
+}
+
+.whit #btn-top:hover {
+  background-color: #fc466b;
+}
+
+.whit .header_section {
+  width: auto;
+  float: center;
+  background-image: url("/src/cssPublic/landing/fluid-bg2.jpg");
+  opacity: 100%;
+  height: auto;
+  padding: 20px 0;
+  background-size: auto;
+  background-repeat: no-repeat;
+  min-height: 120vh;
+  background-position: right 35% bottom 45%;
+}
+
+.whit .gradient_text {
+  background-color: transparent;
+  background-image: linear-gradient(45deg, #fcdb46 30%, #fc466b 60%, #3f5efb 90%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+          animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+@-webkit-keyframes rainbow-text-simple-animation-rev {
+  0% {
+    background-size: 650%;
+  }
+  40% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes rainbow-text-simple-animation-rev {
+  0% {
+    background-size: 650%;
+  }
+  40% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.whit .navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-transition: background 0.6s ease-in;
+  transition: background 0.6s ease-in;
+  z-index: 99999;
+}
+
+.whit .navbar .navbar-brand {
+  font-family: "Lobster Two";
+  font-weight: Normal;
+  font-size: 65px;
+  text-align: center;
+}
+
+.whit .nav_color a {
+  font-family: "Arial";
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.whit .login-bt {
+  width: 100%;
+  float: left;
+  font-size: 15px;
+  color: #ffffff;
+  text-align: center;
+  background-color: white;
+  border-radius: 20px;
+  height: 40px;
+}
+
+.whit .top-button-section li a.login-bt {
+  width: auto;
+  float: left;
+  font-size: 15px;
+  font-family: Arial;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 20px;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  padding: 0 20px;
+}
+
+.whit .top-button-section li a.login-bt:hover,
+.whit .top-button-section li a.login-bt:focus,
+.whit .top-button-section li a.login-bt.active {
+  background: #7e1b85;
+}
+
+.whit a:hover {
+  text-decoration: none;
+}
+
+.whit a:link {
+  text-decoration: none;
+}
+
+.whit .banner-section {
+  width: 100%;
+  float: left;
+  padding-top: 150px;
+}
+
+.whit #main_slider div.img-box {
+  margin-top: 10;
+  float: right;
+  padding-left: 100px;
+}
+
+.whit .banner_taital {
+  width: 100%;
+  float: left;
+  letter-spacing: 2px;
+  font-size: 59px;
+  font-family: "Arial";
+  color: #fc466b;
+  font-weight: 600;
+  text-align: left;
+  padding-top: 70px;
+}
+
+.whit .lorem_text {
+  width: 100%;
+  float: left;
+  font-size: 15px;
+  font-family: "Arial";
+  color: #ffffff;
+  padding-left: 0;
+  margin: 10px 0 0;
+}
+
+.whit .ads_bt {
+  width: 35%;
+  float: left;
+  height: 50px;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: 0;
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.whit .ads_bt a {
+  color: #140035;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: Bold;
+  font-size: 25px;
+}
+
+.whit .align-center {
+  text-align: center;
+}
+
+.whit .hash-list {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .whit .hash-list.cols-3 > li:nth-last-child(-n + 3) {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .whit .hash-list.cols-3 > li {
+    width: 33.3333%;
+  }
+}
+
+.whit .hash-list > li {
+  display: block;
+  float: left;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+}
+
+.whit .pad-30,
+.whit .pad-30-all > * {
+  padding: 30px;
+}
+
+.whit img {
+  border: 0;
+}
+
+.whit .mgb-20,
+.whit .mgb-20-all > * {
+  margin-bottom: 20px;
+}
+
+.whit .wpx-100,
+.whit .wpx-100-after:after {
+  width: 100px;
+}
+
+.whit .img-round,
+.whit .img-rel-round {
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.whit .padb-30,
+.whit .padb-30-all > * {
+  padding-bottom: 30px;
+}
+
+.whit .mgb-40,
+.whit .mgb-40-all > * {
+  margin-bottom: 40px;
+}
+
+.whit .align-center {
+  text-align: center;
+}
+
+.whit [class*="line-b"] {
+  position: relative;
+  padding-bottom: 20px;
+  border-color: #e6af2a;
+}
+
+.whit .fg-text-d,
+.whit .fg-hov-text-d:hover,
+.whit .fg-active-text-d.active {
+  color: white;
+}
+
+.whit .font-cond {
+  color: #e0d1d1;
+}
+
+.whit .font-cond-l {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.whit .social-Heading {
+  padding: 5%;
+  text-align: left;
+  padding-left: 16%;
+}
+
+.whit .social-team-section {
+  padding-top: 0rem;
+  background-image: url("/src/cssPublic/landing/team-bg.jpg");
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+}
+
+.whit body {
+  margin-top: 20px;
+}
+
+.whit .rs-team .team-item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.whit .rs-team .team-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.whit .rs-team .team-item .team-img {
+  position: relative;
+}
+
+.whit .rs-team .team-item .team-img .normal-text {
+  position: absolute;
+  text-align: center;
+  height: 80px;
+  bottom: -1px;
+  padding: 17px 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  background-color: rgba(217, 8, 69, 0.7);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  z-index: 10;
+}
+
+.whit .rs-team .team-item .team-img .normal-text .team-name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  display: block;
+  text-transform: uppercase;
+  padding: 0 0 3px;
+}
+
+.whit .rs-team .team-item .team-img .normal-text .subtitle {
+  color: #fff;
+  margin: 0;
+  display: block;
+}
+
+.whit .rs-team .team-item .team-img img {
+  width: 100%;
+}
+
+.whit .rs-team .team-item .team-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  text-align: center;
+  z-index: 1;
+  padding: 0px;
+  opacity: 0;
+  -webkit-transition: 0.5s all ease-out;
+  -webkit-transition: 0s all ease-out;
+  transition: 0s all ease-out;
+}
+
+.whit .rs-team .team-item .team-content:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(217, 8, 69, 0.8);
+  z-index: -1;
+}
+
+.whit .rs-team .team-item .team-name {
+  margin-bottom: 2px;
+}
+
+.whit .rs-team .team-item .team-name a {
+  margin-bottom: 6px;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.whit .rs-team .team-item .team-name a:hover {
+  color: #fff;
+}
+
+.whit .rs-team .team-item .postion {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.whit .rs-team .team-item .share-icons {
+  position: relative;
+  max-width: 255px;
+  margin: auto;
+  opacity: 0;
+}
+
+.whit .rs-team .team-item .team-social {
+  position: relative;
+}
+
+.whit .rs-team .team-item .team-social li {
+  display: inline-block;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  padding: 31.5px;
+}
+
+.whit .rs-team .team-item .team-social li a {
+  display: block;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #fff;
+  text-align: center;
+  border-radius: 100px;
+  padding-left: 1px;
+  padding-top: 10px;
+  font-size: 28px;
+}
+
+.whit .rs-team .team-item .team-social li a:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #d90845;
+}
+
+.whit .rs-team .team-item:hover .team-content {
+  top: 0;
+}
+
+.whit .rs-team .team-item:hover .share-icons,
+.whit .rs-team .team-item:hover .team-content,
+.whit .rs-team .team-item:hover .team-social {
+  opacity: 1;
+  visibility: visible;
+}
+
+.whit .rs-team .team-item:hover .normal-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.whit .rs-team.fullwidth-team .col-lg-3 {
+  padding: 0;
+}
+
+.whit .rs-team.fullwidth-team .col-lg-3 .team-item {
+  margin-bottom: 0;
+}
+
+.whit .rs-team.fullwidth-team .col-lg-3 .team-item .team-img .normal-text {
+  text-align: left;
+  background: transparent;
+  padding-left: 15px;
+}
+
+.whit .rs-team.rs-team2 .normal-text {
+  -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% -95%);
+          clip-path: polygon(100% 100%, 0% 100%, 50% -95%);
+}
+
+.whit .rs-team#rs-team3 .share-icons {
+  max-width: 230px;
+}
+
+.whit .rs-team#rs-team3.bg6,
+.whit .rs-team#rs-team3.bg4 {
+  position: relative;
+}
+
+.whit .rs-team#rs-team3 .container-fullwidth {
+  position: relative;
+  z-index: 1;
+}
+
+.whit .rs-team#rs-team3 .team-item {
+  margin-bottom: 30px;
+}
+
+.whit .rs-team#rs-team3 .team-item .team-img .normal-text {
+  height: 205px;
+  bottom: -23%;
+  padding: 30px 0;
+  width: 86%;
+  border-radius: 50%;
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+
+.whit .rs-team#rs-team3 .team-item .team-social li {
+  padding: 20px;
+}
+
+.whit .rs-team#rs-team3 .team-item .team-social.icons-1:before,
+.whit .rs-team#rs-team3 .team-item .team-social.icons-2:before {
+  width: 80px;
+}
+
+.whit .rs-team#rs-team3 .team-item .team-social.icons-1:after,
+.whit .rs-team#rs-team3 .team-item .team-social.icons-2:after {
+  height: 70px;
+}
+
+.whit .home5 .rs-team .team-item .team-img img {
+  border-radius: 5px;
+}
+
+.whit ul {
+  list-style: outside none none;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.whit .company-section {
+  padding: 5%;
+  background-image: url("/src/cssPublic/landing/drip.gif");
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 180vh;
+}
+
+.whit .pad-company {
+  padding-top: 30%;
+  padding-bottom: 4%;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.whit body {
+  margin-top: 0px;
+}
+
+.whit .cover-background {
+  position: relative !important;
+  background-size: cover !important;
+  overflow: hidden !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.whit .margin-30px-bottom {
+  margin-bottom: 30px;
+}
+
+.whit .box-hover:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.76);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(116%, #000));
+  background: linear-gradient(-180deg, transparent, #000 116%);
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
 /*# sourceMappingURL=main.css.map */
