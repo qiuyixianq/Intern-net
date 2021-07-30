@@ -53,7 +53,7 @@ export const Registration = () => {
             <div className="full-page">
                 <div className="navbar">
                     <div>
-                        <a className="fontlogo" href='website.html'>Intern-net</a>
+                        <a className="fontlogo" href='/'>Intern-net</a>
                     </div>
                     <nav>
                         <ul id='MenuItems'>
@@ -68,10 +68,10 @@ export const Registration = () => {
                 <form id='login-form' className='login-page' onSubmit={e => handleSubmit(e)} action="" >
                     <div className="form-box">
                         <div className="registerBox">
-                            <div className='button-box'>
+                            <div className='button-box d-flex'>
                                 <div id='btn'></div>
                                 <Link to='/login' style={{ textDecoration: 'none', color: 'black' }} >
-                                    <button type='button' className='toggle-btn'>Log In</button>
+                                    <button type='button' className='toggle-btn text-dark'>Log In</button>
                                 </Link>
 
                                 <Link to='/registration' style={{ textDecoration: 'none', color: 'black' }}>

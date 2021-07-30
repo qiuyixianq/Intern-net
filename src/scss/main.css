@@ -11854,8 +11854,8 @@ body {
 .ted .full-page {
   height: 100%;
   width: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/src/cssPublic/login/0.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/cssPublic/login/0.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("/src/cssPublic/login/1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/cssPublic/login/1.jpg");
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -12030,6 +12030,7 @@ body {
 .ted .submit-btn {
   width: 85%;
   padding: 10px 30px;
+  color: black;
   cursor: pointer;
   display: block;
   margin: auto;
@@ -12041,6 +12042,7 @@ body {
 
 .ted .submit-btn:hover {
   background: #af8a60;
+  color: white;
 }
 
 .ted span {
