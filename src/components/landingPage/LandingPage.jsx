@@ -18,16 +18,16 @@ export const LandingPage = () => {
                                     <a className="nav-link active" aria-current="page" href="#home">HOME </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">INTERNSHIP PROGRAM</a>
+                                    <a className="nav-link" href="/">INTERNSHIP PROGRAM</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#testimonial">TESTIMONIALS</a>
+                                    <a className="nav-link" href="/">TESTIMONIALS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#company">COMPANIES</a>
+                                    <a className="nav-link" href="/">COMPANIES</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#team">SOCIAL TEAM</a>
+                                    <a className="nav-link" href="/">SOCIAL TEAM</a>
                                 </li>
                             </ul>
                             <ul className="nav nav_color top-button-section">
@@ -89,7 +89,7 @@ export const LandingPage = () => {
                         </div>
                         <ul className="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
                             <li>
-                                <img src="image/kyo.jpg" className="wpx-100 img-round mgb-20" title="" alt="" data-edit="false"
+                                <img src="/img/Landing/kyo.jpg" className="wpx-100 img-round mgb-20" title="" alt="" data-edit="false"
                                     data-editor="field"
                                     data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]" />
                                 <p className="fs-110 font-cond-l" contenteditable="false">"This is my first time doing my
@@ -99,7 +99,7 @@ export const LandingPage = () => {
                                     in Marketing | UOW KDU UNIVERSITY</small>
                             </li>
                             <li>
-                                <img src="image/gojo.jpg" className="wpx-100 img-round mgb-20" title="" alt="" data-edit="false"
+                                <img src="/img/Landing/gojo.jpg" className="wpx-100 img-round mgb-20" title="" alt="" data-edit="false"
                                     data-editor="field"
                                     data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]" />
                                 <p className="fs-110 font-cond-l" contenteditable="false">" Internship was a very exciting
@@ -109,7 +109,7 @@ export const LandingPage = () => {
                                     in Computing | UOW KDU UNIVERSITY</small>
                             </li>
                             <li>
-                                <img src="image/kakashi.jpg" className="wpx-100 img-round mgb-20" title="" alt="" data-edit="false"
+                                <img src="/img/Landing/kakashi.jpg" className="wpx-100 img-round mgb-20" title="" alt="" data-edit="false"
                                     data-editor="field"
                                     data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]" />
                                 <p className="fs-110 font-cond-l" contenteditable="false">" Doing internship during the pandemic
@@ -131,7 +131,7 @@ export const LandingPage = () => {
                                 <div className="col-sm-3">
                                     <div className="h-100">
                                         <a href="https://shopee.com.my/" className="card box-hover cover-background border-0 p-4">
-                                            <img src="image/shopee.png" />
+                                            <img src="/img/Landing/shopee.png" />
                                             <div className="mt-auto position-relative z-index-9">
                                                 <h5 className="text-white">Shopee</h5>
                                             </div>
@@ -143,7 +143,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.digi.com.my/"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="image\digi-logo.jpg" />
+                                                <img src="/img/Landing/digi-logo.png" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">Digi</h5>
                                                 </div>
@@ -152,7 +152,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.dhl.com/my-en/home.html?locale=true"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="image\DHL.png" />
+                                                <img src="/img/Landing/DHL.png" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">DHL</h5>
                                                 </div>
@@ -161,7 +161,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4">
                                             <a href="https://www.nestle.com.my/"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="image\Nestle-Logo.png" />
+                                                <img src="/img/Landing/Nestle-Logo.png" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">Nestle</h5>
                                                 </div>
@@ -172,7 +172,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.agoda.com/?cid=1844104"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="image\agoda.png" />
+                                                <img src="/img/Landing/agoda.png" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">Agoda </h5>
                                                 </div>
@@ -181,7 +181,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.ifastcapital.com.my/myifast/what-we-offer"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="image\iFast.jpg" />
+                                                <img src="/img/Landing/iFast.png" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">iFast</h5>
                                                 </div>
@@ -197,7 +197,7 @@ export const LandingPage = () => {
 
 
 
-            <div id="team">
+            <div id="team" >
                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
                 <div className="social-team-section">
                     <div className="rs-team fullwidth-team pt-100 pb-70">
@@ -208,7 +208,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="image\green.png" alt="team Image" />
+                                            <img src="/img/Landing/green.png" alt="team Image" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Chan Hua Jian </h4>
                                                 <span className="subtitle">CEO &amp; Lao Ban</span>
@@ -219,17 +219,17 @@ export const LandingPage = () => {
                                                 <div className="display-table-cell">
                                                     <div className="share-icons">
                                                         <ul className="team-social icons-1">
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-facebook"></i></a>
                                                             </li>
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-instagram"></i></a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="team-details">
                                                         <h4 className="team-name">
-                                                            <a href="speakers-single.html">Chan Hua Jian</a>
+                                                            <a href="/">Chan Hua Jian</a>
                                                         </h4>
                                                         <span className="postion">CEO &amp; Lao Ban</span>
                                                     </div>
@@ -241,7 +241,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="image\red.png" alt="team Image" />
+                                            <img src="/img/Landing/red.png" alt="team Image" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Choon Whitney</h4>
                                                 <span className="subtitle">Assistant &amp; Founder</span>
@@ -252,17 +252,17 @@ export const LandingPage = () => {
                                                 <div className="display-table-cell">
                                                     <div className="share-icons">
                                                         <ul className="team-social icons-1">
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-facebook"></i></a>
                                                             </li>
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-instagram"></i></a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="team-details">
                                                         <h4 className="team-name">
-                                                            <a href="speakers-single.html">Choon Whitney</a>
+                                                            <a href="/">Choon Whitney</a>
                                                         </h4>
                                                         <span className="postion">Assistant &amp; Founder</span>
                                                     </div>
@@ -274,7 +274,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="image\purple.png" alt="team Image" />
+                                            <img src="/img/Landing/purple.png" alt="team Image" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Tan Xian Zheng</h4>
                                                 <span className="subtitle">CEO &amp; Founder</span>
@@ -285,17 +285,17 @@ export const LandingPage = () => {
                                                 <div className="display-table-cell">
                                                     <div className="share-icons">
                                                         <ul className="team-social icons-1">
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-facebook"></i></a>
                                                             </li>
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-instagram"></i></a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="team-details">
                                                         <h4 className="team-name">
-                                                            <a href="speakers-single.html">Tan Xian Zheng</a>
+                                                            <a href="/">Tan Xian Zheng</a>
                                                         </h4>
                                                         <span className="postion">CEO &amp; Founder</span>
                                                     </div>
@@ -307,7 +307,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3 ">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="image\yellow.png" alt="team Image" />
+                                            <img src="/img/Landing/yellow.png" alt="team Image" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Khoo Yee Xiang</h4>
                                                 <span className="subtitle">CEO &amp; Founder</span>
@@ -318,17 +318,17 @@ export const LandingPage = () => {
                                                 <div className="display-table-cell">
                                                     <div className="share-icons">
                                                         <ul className="team-social icons-1">
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-facebook"></i></a>
                                                             </li>
-                                                            <li><a href="#" className="social-icon"><i
+                                                            <li><a href="/" className="social-icon"><i
                                                                 className="fa fa-instagram"></i></a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="team-details">
                                                         <h4 className="team-name">
-                                                            <a href="speakers-single.html">Khoo Yee Xiang</a>
+                                                            <a href="/">Khoo Yee Xiang</a>
                                                         </h4>
                                                         <span className="postion">CEO &amp; Founder</span>
                                                     </div>
