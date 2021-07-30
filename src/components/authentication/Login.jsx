@@ -77,7 +77,7 @@ export const Login = () => {
                 <div className="full-page">
                     <div className="navbar">
                         <div>
-                            <a className="fontlogo" href='website.html'>Intern-net</a>
+                            <a className="fontlogo" href='/'>Intern-net</a>
                         </div>
                         <nav>
                             <ul id='MenuItems'>
@@ -92,7 +92,7 @@ export const Login = () => {
                     <div id='login-form' className='login-page'>
                         <div className="form-box">
                             <div className="loginBox">
-                                <div className='button-box'>
+                                <div className='button-box d-flex'>
                                     <div id='btn'></div>
 
                                     <Link to='/login' style={{ textDecoration: 'none', color: 'black' }} >
@@ -101,7 +101,7 @@ export const Login = () => {
 
 
                                     <Link to='/registration' style={{ textDecoration: 'none', color: 'black' }}>
-                                        <button type='button' className='toggle-btn'>Sign Up</button>
+                                        <button type='button' className='toggle-btn text-dark'>Sign Up</button>
                                     </Link>
 
                                 </div>

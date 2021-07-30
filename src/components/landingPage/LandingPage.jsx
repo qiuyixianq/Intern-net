@@ -32,7 +32,14 @@ export const LandingPage = () => {
                             </ul>
                             <ul className="nav nav_color top-button-section">
                                 <li>
-                                    <a className="login-bt nav" aria-current="page" href="#">LOGIN/SIGN UP</a>
+                                    <Link to="/login">
+                                        <a className="login-bt nav" aria-current="page" href="/" >LOGIN</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/registration">
+                                        <a className="login-bt nav" aria-current="page" href="/" >SIGN UP</a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -51,19 +58,15 @@ export const LandingPage = () => {
                                                         <p className="lorem_text">The Intern-Net aims to give the best
                                                             internship experience for interns to experience in joining
                                                             different projects with different people.</p>
-                                                        <div className="ads_bt"><a href="#">Start Here
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                                                fill="rgba(20,0,53,255)" className="bi bi-arrow-bar-right"
-                                                                viewBox="0 0 16 16">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z" />
-                                                            </svg>
-                                                        </a>
+                                                        <div className="ads_bt">
+                                                            <Link to="registration" >
+                                                                <span>Get Started</span>
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-7 col-sm-12">
                                                         <div className="img-box">
-                                                            <figure><img src="/img/Landing/int.png" style={{ width: "100%" }} /></figure>
+                                                            <figure><img src="/img/Landing/int.png" alt="illustration" style={{ width: "100%" }} /></figure>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -131,7 +134,7 @@ export const LandingPage = () => {
                                 <div className="col-sm-3">
                                     <div className="h-100">
                                         <a href="https://shopee.com.my/" className="card box-hover cover-background border-0 p-4">
-                                            <img src="/img/Landing/shopee.png" />
+                                            <img src="/img/Landing/shopee.png" alt="company logo" />
                                             <div className="mt-auto position-relative z-index-9">
                                                 <h5 className="text-white">Shopee</h5>
                                             </div>
@@ -143,7 +146,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.digi.com.my/"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="/img/Landing/digi-logo.png" />
+                                                <img src="/img/Landing/digi-logo.png" alt="company logo" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">Digi</h5>
                                                 </div>
@@ -152,7 +155,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.dhl.com/my-en/home.html?locale=true"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="/img/Landing/DHL.png" />
+                                                <img src="/img/Landing/DHL.png" alt="company logo" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">DHL</h5>
                                                 </div>
@@ -161,7 +164,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4">
                                             <a href="https://www.nestle.com.my/"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="/img/Landing/Nestle-Logo.png" />
+                                                <img src="/img/Landing/Nestle-Logo.png" alt="company logo" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">Nestle</h5>
                                                 </div>
@@ -172,7 +175,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.agoda.com/?cid=1844104"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="/img/Landing/agoda.png" />
+                                                <img src="/img/Landing/agoda.png" alt="company logo" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">Agoda </h5>
                                                 </div>
@@ -181,7 +184,7 @@ export const LandingPage = () => {
                                         <div className="col-md-4 xs-margin-30px-bottom">
                                             <a href="https://www.ifastcapital.com.my/myifast/what-we-offer"
                                                 className="card box-hover cover-background border-0 p-4">
-                                                <img src="/img/Landing/iFast.png" />
+                                                <img src="/img/Landing/iFast.png" alt="company logo" />
                                                 <div className="mt-auto position-relative z-index-9">
                                                     <h5 className="text-white">iFast</h5>
                                                 </div>
@@ -208,7 +211,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="/img/Landing/green.png" alt="team Image" />
+                                            <img src="/img/Landing/green.png" alt="team" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Chan Hua Jian </h4>
                                                 <span className="subtitle">CEO &amp; Lao Ban</span>
@@ -241,7 +244,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="/img/Landing/red.png" alt="team Image" />
+                                            <img src="/img/Landing/red.png" alt="team" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Choon Whitney</h4>
                                                 <span className="subtitle">Assistant &amp; Founder</span>
@@ -274,7 +277,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="/img/Landing/purple.png" alt="team Image" />
+                                            <img src="/img/Landing/purple.png" alt="team" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Tan Xian Zheng</h4>
                                                 <span className="subtitle">CEO &amp; Founder</span>
@@ -307,7 +310,7 @@ export const LandingPage = () => {
                                 <div className="col-md-3 ">
                                     <div className="team-item">
                                         <div className="team-img">
-                                            <img src="/img/Landing/yellow.png" alt="team Image" />
+                                            <img src="/img/Landing/yellow.png" alt="team" />
                                             <div className="normal-text">
                                                 <h4 className="team-name">Khoo Yee Xiang</h4>
                                                 <span className="subtitle">CEO &amp; Founder</span>

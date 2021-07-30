@@ -402,7 +402,7 @@ body {
   .full-page {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/cssPublic/login/0.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/cssPublic/login/1.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -564,6 +564,7 @@ body {
   .submit-btn {
     width: 85%;
     padding: 10px 30px;
+    color: black;
     cursor: pointer;
     display: block;
     margin: auto;
@@ -574,6 +575,7 @@ body {
   }
   .submit-btn:hover {
     background: #af8a60;
+    color: white;
   }
   span {
     color: #777;
