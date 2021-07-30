@@ -71,9 +71,11 @@ export const Home = () => {
     //admin layout
     else if (user.email === 'internnet@gmail.com') {
         return (
-            <div className="mainContent">
-                <NavBar />
-                <AddCompany />
+            <div className="yx">
+                <div className="mainContent">
+                    <NavBar />
+                    <AddCompany />
+                </div>
             </div>
         )
     }
