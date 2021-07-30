@@ -10,7 +10,7 @@ export const LandingPage = () => {
                         <div className="container">
                             <a className=" navbar-brand gradient_text"
                                 href="https://www.youtube.com/watch?v=hzOFmlwypFo&t=225s&ab_channel=%EA%B5%90%EA%B4%91TV">
-                                Intern-Net
+                                Intern-net
                             </a>
 
                             <ul className="nav nav_color justify-content-end">

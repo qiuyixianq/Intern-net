@@ -50,6 +50,9 @@ const Sidebar = () =>{
                 <NavIcon to='#'>
                     <BiIcons.BiMenu onClick={showSidebar}/>
                 </NavIcon>
+                <Link to="/home">
+                    <button>Home</button>
+                </Link>
             </Nav>
             <SidebarNav sidebar={sidebar}>
                 <SidebarWrap>

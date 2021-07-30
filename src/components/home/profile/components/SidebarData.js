@@ -5,41 +5,41 @@ import * as IoIcons from 'react-icons/io5';
 export const SidebarData = [
     {
         title: 'Overview',
-        path: '/overview',
+        path: '/profile/overview',
         icon: <BiIcons.BiGlobe />,
         iconClosed: <BiIcons.BiCaretDown />,
         iconOpened: <BiIcons.BiCaretUp />,
         subNav :[
             {
                 title: 'Profile Info',
-                path: '/overview/profileinfo',
+                path: '/profile/overview/profileinfo',
                 icon: <BiIcons.BiUserCircle />,
             },
             {
                 title: 'Education',
-                path: '/overview/education',
+                path: '/profile/overview/education',
                 icon: <IoIcons.IoSchool />,
             },
             {
                 title: 'Experience',
-                path: '/overview/experience',
+                path: '/profile/overview/experience',
                 icon: <BiIcons.BiBriefcase />,
             },
         ]
     },
     {
         title: 'Security',
-        path: '/security',
+        path: '/profile/security',
         icon: <BiIcons.BiLock />,
     },
     {
         title: 'Saved',
-        path: '/saved',
+        path: '/profile/saved',
         icon: <BiIcons.BiBookmark />,
     },
     {
         title: 'Support',
-        path: '/support',
+        path: '/profile/support',
         icon: <BiIcons.BiHelpCircle />,
     },
     
