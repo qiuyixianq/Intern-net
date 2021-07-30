@@ -29,7 +29,7 @@ function App() {
             <Home />
           </Route>
 
-          <Route path='/profile' exact>
+          <Route path='/profile' >
             <MainProfile />
           </Route>
 
