@@ -152,7 +152,7 @@ export const CompanyDetail = () => {
 
                 {/*Company Header*/}
                 <header className="d-flex align-items-center">
-                    <img className="companyLogo" src={selectedCompany.logo} alt="company logo" />
+                    <img className="companyLogo" src={selectedCompany.logo} alt="company logo" height="80px" />
                     <h3 className="ms-2">{selectedCompany.companyName}</h3>
                 </header>
 

@@ -68,4 +68,13 @@ router.put('/', async (req, res) => {
 
 });
 
+//user information update
+router.put('/information', (req,res) => {
+    const { updateUser, email } = req.body;
+    
+    User.findOneAndUpdate({email}, updateUser, {new: true}, (err,docs) => {
+        err ? res.json({updateSuccess: false}) : res.json({updateSuccess: true});
+    })
+})
+
 module.exports = router;
