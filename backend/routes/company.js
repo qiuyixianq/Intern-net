@@ -61,7 +61,6 @@ router.post('/', (req, res) => {
 // comment
 router.get('/comment', async(req, res) => {
     const { companyName } = req.query;
-    console.log(companyName);
 
     try{
         const result = await CompanyComment.findOne({ 'companyName': companyName});
