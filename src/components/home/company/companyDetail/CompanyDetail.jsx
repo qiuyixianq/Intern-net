@@ -23,7 +23,7 @@ export const CompanyDetail = () => {
 
     const saveJob = async (companyName, jobTitle) => {
         try {
-            const result = await axios.put('http://localhost:4000/profile', { username: user.username, companyName, jobTitle });
+            const result = await axios.put('http://localhost:4000/profile', { email: user.email, companyName, jobTitle });
             const updatedUser = result.data;
             dispatch(updateUser(updatedUser));
         }
