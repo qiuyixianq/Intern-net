@@ -48,16 +48,13 @@ export const LandingPage = () => {
                                             <a className="nav-link active" aria-current="page" href="#home">HOME </a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="/">INTERNSHIP PROGRAM</a>
+                                            <a className="nav-link" href="#testimonial">TESTIMONIALS</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="/">TESTIMONIALS</a>
+                                            <a className="nav-link" href="#company">COMPANIES</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="/">COMPANIES</a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a className="nav-link" href="/">SOCIAL TEAM</a>
+                                            <a className="nav-link" href="#team">SOCIAL TEAM</a>
                                         </li>
                                     </ul>
                                     <ul className="nav nav_color top-button-section">
