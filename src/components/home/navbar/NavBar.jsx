@@ -8,7 +8,7 @@ import { clearSearch } from '../searchBar/searchBarSlice';
 export const NavBar = () => {
     const dispatch = useDispatch();
     const location = useLocation();
-    console.log(location.pathname);
+    
     //event func
     const handleLogout = () => {
         //could just use combineReducer as top level reducer in store and reset everything with single dispatch

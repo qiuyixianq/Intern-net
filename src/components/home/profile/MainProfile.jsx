@@ -10,8 +10,14 @@ import Support from "./pages/Support";
 import Experience from "./pages/Experience";
 import { NavBar } from '../navbar/NavBar';
 import { Footer } from '../footer/Footer';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 export const MainProfile = () => {
+    const { token } = useSelector(state => state.authentication);
+
+    if (!token) return  <Redirect to='/login' />
+
     return (
         // <Router>
         <div className="hj">
@@ -23,9 +29,6 @@ export const MainProfile = () => {
                     </div>
                     {/* <Profile/> */}
                 </div>
-
-
-
 
                 <Switch>
                     <Route path="/profile" exact component={Profile} />

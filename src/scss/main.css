@@ -12764,6 +12764,25 @@ body {
   padding-bottom: 150px;
 }
 
+.hj .hjContent .navActive {
+  position: relative;
+}
+
+.hj .hjContent .navActive::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background-color: blue;
+}
+
+.hj .hjContent .appName {
+  font-family: "Lobster Two", cursive;
+  color: black;
+}
+
 .hj .saved {
   padding: 20px;
 }

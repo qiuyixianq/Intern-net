@@ -1222,6 +1222,25 @@ body {
     position: relative;
     min-height: 100vh;
     padding-bottom: 150px;
+
+    .navActive {
+      position: relative;
+    }
+
+    .navActive::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      background-color: blue;
+    }
+
+    .appName {
+      font-family: "Lobster Two", cursive;
+      color: black;
+    }
   }
 
   .saved {

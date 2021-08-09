@@ -8,6 +8,7 @@ import SubMenu from './SubMenu';
 const Nav = styled.div`
     background: white;
     height: 50px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
