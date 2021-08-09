@@ -11,7 +11,7 @@ const ProfileInfo = () => {
   const handleSubmit = async (el) => {
     el.preventDefault();
     const email = user.email;
-    if(!token) alert('Authentication error occur, refresh on home page or login again');
+    if(!token) alert('Authentication error occured, refresh on home page or login again');
 
     const resUser = await axios.put('http://localhost:4000/profile/information', { updateUser, email });
     if(resUser.data.updateSuccess) alert('Updated successfully');

@@ -72,6 +72,21 @@ router.put('/information', (req,res) => {
     User.findOneAndUpdate({email}, updateUser, {new: true}, (err,docs) => {
         err ? res.json({updateSuccess: false}) : res.json({updateSuccess: true});
     })
-})
+});
+
+//user password change
+router.put('/password', async(req,res) => {
+    const { email, oldPassword, newPassword } = req.body;
+
+    const result = await User.findOne({email, password: oldPassword});
+    if(!result) res.json( {success: false});
+    else {
+        //update password
+        User.findOneAndUpdate({email, password: oldPassword},{password: newPassword},{new: true},(err,docs) => {
+            err ? res.json({success: false}) : res.json({success: true});
+            console.log(`User ${docs.email} password updated`);
+        })
+    }
+});
 
 module.exports = router;
