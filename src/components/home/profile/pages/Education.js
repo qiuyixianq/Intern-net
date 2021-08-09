@@ -3,7 +3,7 @@ import "./Security.css";
 
 const Education = () => {
   return (
-    <div className="container content">
+    <div className="container content mb-5">
       <h1 className="h3 mb-3">Education</h1>
 
       <div className="tab-content">
@@ -49,7 +49,7 @@ const Education = () => {
                 </div>
               </div>
               <p></p>
-              <div className="container">
+              <div className="container mb-4">
                 <div className="row">
                   <div className="col-sm">
                     <button className="btn_add" type="submit">

@@ -32,7 +32,7 @@ const Security = () => {
   }
 
   return (
-    <div className="container content">
+    <div className="container content mb-5">
       <h1 className="h3 mb-3">Security Settings</h1>
 
       <div className="tab-content">

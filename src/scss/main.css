@@ -12758,6 +12758,12 @@ body {
   height: 100%;
 }
 
+.hj .hjContent {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 150px;
+}
+
 .hj .saved {
   padding: 20px;
 }

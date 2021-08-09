@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer = () => {
     return (
-        <footer className="footer mt-auto py-3 bg-dark">
+        <footer className="footer py-3 bg-dark">
             <div className="container">
                 <div className="d-flex justify-content-between align-items-center">
                     <span className="footer-logo fs-1">Intern-net</span>

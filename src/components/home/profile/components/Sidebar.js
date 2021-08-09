@@ -6,8 +6,8 @@ import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 
 const Nav = styled.div`
-    background: #15171c;
-    height: 80px;
+    background: white;
+    height: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -39,29 +39,25 @@ const SidebarWrap = styled.nav`
     width: 100%;
     `;
 
-const Sidebar = () =>{
+const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
-
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
         <>
             <Nav>
                 <NavIcon to='#'>
-                    <BiIcons.BiMenu onClick={showSidebar}/>
+                    <BiIcons.BiMenu onClick={showSidebar} />
                 </NavIcon>
-                <Link to="/home">
-                    <button>Home</button>
-                </Link>
             </Nav>
             <SidebarNav sidebar={sidebar}>
                 <SidebarWrap>
                     <NavIcon to='#'>
-                        <BiIcons.BiLeftArrowAlt onClick={showSidebar}/>
+                        <BiIcons.BiLeftArrowAlt onClick={showSidebar} />
                     </NavIcon>
-                        {SidebarData.map((item, index) =>{
-                            return <SubMenu item={item} key={index} />;
-                        })}
+                    {SidebarData.map((item, index) => {
+                        return <SubMenu item={item} key={index} />;
+                    })}
                 </SidebarWrap>
             </SidebarNav>
         </>

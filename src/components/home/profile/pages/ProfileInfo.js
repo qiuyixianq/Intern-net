@@ -23,7 +23,7 @@ const ProfileInfo = () => {
   }
 
   return (
-    <div className="container content">
+    <div className="container content mb-5">
       <h1 className="h3 mb-3">Profile Information</h1>
       <div className="card">
         <div className="card-body">

@@ -605,11 +605,11 @@ body {
 
 //WHITNEY (LANDING PAGE)
 .whit {
-  .content-main{
+  .content-main {
     opacity: 0;
   }
   //intro anim
-  .introAnim{
+  .introAnim {
     z-index: 2;
 
     .intro {
@@ -633,12 +633,12 @@ body {
       height: 100%;
       transform: translateY(100%);
     }
-  
+
     .hide {
       background: black;
       overflow: hidden;
     }
-  
+
     .hide span {
       transform: translateY(100%);
       display: inline-block;
@@ -649,7 +649,7 @@ body {
       font-family: "Heebo", sans-serif;
       font-size: 5rem;
     }
-    .text-logo{
+    .text-logo {
       font-family: "Lobster Two", cursive;
     }
   }
@@ -1218,6 +1218,12 @@ body {
 //Landing page end
 
 .hj {
+  .hjContent {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 150px;
+  }
+
   .saved {
     padding: 20px;
   }
