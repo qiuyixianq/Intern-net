@@ -8,7 +8,7 @@ export const JobInput = props => {
         <div key={index} >
             <p>
                 {`#${index + 1}`}
-                <span className="ms-2" role="button" onClick={ () => handleRemoveJob(index)}>remove</span>
+                <span className="ms-2 badge bg-danger" role="button" onClick={ () => handleRemoveJob(index)}>remove</span>
             </p>
             <label htmlFor={`job${index}Title`}>Job Title</label>
             <input type="text" className="form-control mb-3" id={`job${index}Title`} data-index={index} data-field='title' onChange={el => onChange(el)} required />

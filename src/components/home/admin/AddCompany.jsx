@@ -59,7 +59,7 @@ export const AddCompany = () => {
                 <div className="mb-2">
                     <h5>Company Registration Form</h5>
                     <div className="basicInformation">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name" >Name</label>
                         <input type="text" className="form-control mb-3" id="name" placeholder="Company Name" onChange={el => handleChange(el)} required />
 
                         <label htmlFor="website">Website</label>
@@ -92,13 +92,13 @@ export const AddCompany = () => {
                     </div>
 
                     <div className="jobSection">
-                        <p>Job <span role="button" onClick={() => addJob()}>add</span></p>
+                        <p>Job <span role="button" onClick={() => addJob()} className="badge bg-success">add</span></p>
                         {jobArr.map((job, index) => <JobInput index={index} key={index} handleRemoveJob={() => handleRemoveJob(index)} onChange={el => handleJobChange(el)} />)}
                     </div>
 
 
 
-                    <input type="submit" className="btn btn-info" />
+                    <input type="submit" className="btn btn-success" />
                 </div>
 
             </form>

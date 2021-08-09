@@ -6,7 +6,7 @@ const Company = require('../Models/company_model');
 const CompanyComment = require('../Models/comment_model');
 
 //API
-// root
+// Root
 router.get('/', (req, res) => {
     const { isAdvanceSearch } = req.query;
 
@@ -58,6 +58,7 @@ router.post('/', (req, res) => {
     newCompany.save(err => err ? res.send(err) : res.send('company saved'));
 });
 
+
 // comment
 router.get('/comment', async(req, res) => {
     const { companyName } = req.query;
@@ -68,6 +69,7 @@ router.get('/comment', async(req, res) => {
         else res.json(result.comments);
     }catch(err) { console.log(err) }
 });
+
 
 router.post('/comment', async (req, res) => {
     const { companyName, comment, user } = req.body;

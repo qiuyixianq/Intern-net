@@ -11794,7 +11794,13 @@ body {
   padding: 20px;
   border-radius: 20px;
   text-align: left;
-  width: 50%;
+  width: 98%;
+}
+
+@media (min-width: 992px) {
+  .yx .addCompanyForm {
+    width: 60%;
+  }
 }
 
 .yx .addCompanyForm .basicInformation {
@@ -12206,7 +12212,7 @@ body {
   padding: 20px 0;
   background-size: auto;
   background-repeat: no-repeat;
-  min-height: 120vh;
+  min-height: 100vh;
   background-position: right 35% bottom 45%;
 }
 
@@ -12312,7 +12318,7 @@ body {
 .whit .banner-section {
   width: 100%;
   float: left;
-  padding-top: 150px;
+  padding-top: 300px;
 }
 
 .whit #main_slider div.img-box {
@@ -12594,7 +12600,7 @@ body {
   position: relative;
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
-  padding: 31.5px;
+  padding: 35px;
 }
 
 .whit .rs-team .team-item .team-social li a {
@@ -12607,8 +12613,8 @@ body {
   text-align: center;
   border-radius: 100px;
   padding-left: 1px;
-  padding-top: 10px;
-  font-size: 28px;
+  padding-top: 1px;
+  font-size: 25px;
 }
 
 .whit .rs-team .team-item .team-social li a:hover {
