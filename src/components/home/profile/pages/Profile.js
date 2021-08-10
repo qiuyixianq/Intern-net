@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ProfImg from "../assets/images/prof_test_crop.jpeg";
 import "./ProfileTemp.css";
-import { Chart, Doughnut } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
@@ -80,8 +80,8 @@ const Profile = () => {
                         <div>{user.email}</div>
                       </li>
                       <li className="d-flex align-items-center flex-wrap">
-                        <i class="bx bxs-map prof_icons"></i>
-                        <div>Kuala Lumpur, Malaysia</div>
+                        <i className="bx bxs-map prof_icons"></i>
+                        <div>{user.location}</div>
                       </li>
                       <li className="d-flex align-items-center flex-wrap">
                         <i className="bx bxl-linkedin-square prof_icons"></i>
@@ -98,7 +98,7 @@ const Profile = () => {
                           {user.firstName}
                         </a>
                         <i
-                          class="bx bx-link-external"
+                          className="bx bx-link-external"
                           style={{ fontSize: "12px" }}
                         ></i>
                       </li>
